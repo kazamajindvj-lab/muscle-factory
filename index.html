@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Muscle Factory — Where Boys Become Men | Premium Gym & Management System</title>
+  <meta name="description" content="The Muscle Factory is the premier bodybuilding and fitness center in Nowhar, Charari Sharief, Jammu & Kashmir. High-end strength equipment, certified coaching, and elite transformation programs. Where Boys Become Men.">
+  <meta property="og:title" content="The Muscle Factory — Where Boys Become Men | Premium Gym & Management System">
+  <meta property="og:description" content="The Muscle Factory is the premier bodybuilding and fitness center in Nowhar, Charari Sharief, Jammu & Kashmir. High-end strength equipment, certified coaching, and elite transformation programs. Where Boys Become Men.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Athletic Condensed Display + Modern Sans Body + Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#E50914',
+              redHover: '#C70811',
+              redDark: '#991B1B',
+              redLight: '#FF333D',
+              redGlow: 'rgba(229, 9, 20, 0.45)',
+              dark: '#050505',
+              surface: '#0B0B0E',
+              card: '#121216',
+              cardSubtle: '#18181F',
+              border: '#24242C',
+              borderRed: '#4C1014'
+            }
+          },
+          fontFamily: {
+            display: ['"Barlow Condensed"', '-apple-system', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar - Red & Black */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #050505; }
+    ::-webkit-scrollbar-thumb { background: #222228; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #E50914; }
+
+    /* Laser Scanner Beam Keyframe */
+    @keyframes laserScan {
+      0% { top: 8%; opacity: 0.9; }
+      50% { opacity: 1; }
+      100% { top: 88%; opacity: 0.9; }
+    }
+    .animate-laser {
+      animation: laserScan 1.2s infinite alternate ease-in-out;
+    }
+
+    /* Print Stylesheet for Invoices & Member Passes */
+    @media print {
+      body * { visibility: hidden !important; }
+      #printable-receipt-card, #printable-receipt-card * { visibility: visible !important; }
+      #printable-receipt-card {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        border: 2px solid #000 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-[#050505] text-zinc-100 font-sans antialiased selection:bg-[#E50914] selection:text-white">
+
+  <!-- ==========================================================================
+       PUBLIC WEBSITE VIEW
+       ========================================================================== -->
+  <div id="public-view" class="min-h-screen flex flex-col">
+    
+    <!-- 3-Zone Top Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full bg-[#050505]/95 backdrop-blur-md border-b border-[#202026]">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-8 px-4 sm:px-6 lg:px-8 h-20">
+        
+        <!-- Zone 1: Brand Wordmark with Official Emblem -->
+        <a href="#hero" class="flex items-center gap-3.5 group whitespace-nowrap shrink-0">
+          <div class="relative w-12 h-12 rounded-full overflow-hidden bg-black border-2 border-[#E50914] flex items-center justify-center shadow-[0_0_20px_rgba(229,9,20,0.5)] transition-transform group-hover:scale-105 shrink-0">
+            <img src="/the_muscle_factory_logo.png" onerror="this.onerror=null; this.src='/public/assets/the_muscle_factory_logo.png';" alt="The Muscle Factory Logo" class="w-full h-full object-cover">
+          </div>
+          <div class="flex flex-col">
+            <span class="font-display text-2xl font-black tracking-wider uppercase leading-none text-white">
+              THE MUSCLE <span class="text-[#E50914]">FACTORY</span>
+            </span>
+            <span class="text-[10px] uppercase font-bold tracking-[0.22em] text-red-500 leading-tight mt-0.5">
+              WHERE BOYS BECOME MEN
+            </span>
+          </div>
+        </a>
+
+        <!-- Zone 2: Clean Nav Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase text-zinc-300">
+          <a href="#about" class="hover:text-[#E50914] transition-colors whitespace-nowrap shrink-0">About</a>
+          <a href="#services" class="hover:text-[#E50914] transition-colors whitespace-nowrap shrink-0">Services</a>
+          <a href="#plans" class="hover:text-[#E50914] transition-colors whitespace-nowrap shrink-0">Memberships</a>
+          <a href="#calculator" class="hover:text-[#E50914] transition-colors whitespace-nowrap shrink-0">Calculator</a>
+          <a href="#contact" class="hover:text-[#E50914] transition-colors whitespace-nowrap shrink-0">Contact</a>
+        </nav>
+
+        <!-- Zone 3: Actions (Join Now + Admin Portal) -->
+        <div class="flex items-center gap-3 shrink-0">
+          <button onclick="openAdminLoginModal()" class="flex items-center gap-1.5 px-3 py-2 text-xs font-semibold uppercase tracking-wider text-zinc-300 hover:text-white bg-[#141418] hover:bg-[#1F1F26] border border-[#2B2B34] rounded-lg transition-colors whitespace-nowrap shrink-0" title="Gym Owner & Staff Portal">
+            <span class="text-[#E50914]">🛡️</span>
+            <span class="hidden sm:inline">Admin</span>
+          </button>
+
+          <button onclick="openJoinModal()" class="px-5 py-2.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white bg-[#E50914] hover:bg-[#C70811] rounded-lg shadow-[0_0_20px_rgba(229,9,20,0.4)] hover:shadow-[0_0_28px_rgba(229,9,20,0.65)] transition-all duration-200 active:scale-95 whitespace-nowrap shrink-0">
+            Join Now
+          </button>
+
+          <!-- Mobile Hamburger -->
+          <button onclick="toggleMobileNav()" class="md:hidden p-2 text-zinc-400 hover:text-white rounded-lg focus:outline-none" aria-label="Toggle navigation">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div id="mobile-nav-menu" class="hidden md:hidden bg-[#0D0D10] border-b border-[#202026] px-6 py-6 space-y-4">
+        <nav class="flex flex-col space-y-3 text-base font-semibold uppercase tracking-wider text-zinc-200">
+          <a href="#about" onclick="toggleMobileNav()" class="py-1 hover:text-[#E50914] transition-colors">About</a>
+          <a href="#services" onclick="toggleMobileNav()" class="py-1 hover:text-[#E50914] transition-colors">Services</a>
+          <a href="#plans" onclick="toggleMobileNav()" class="py-1 hover:text-[#E50914] transition-colors">Memberships</a>
+          <a href="#calculator" onclick="toggleMobileNav()" class="py-1 hover:text-[#E50914] transition-colors">BMI &amp; Macros</a>
+          <a href="#contact" onclick="toggleMobileNav()" class="py-1 hover:text-[#E50914] transition-colors">Contact &amp; Map</a>
+        </nav>
+        <div class="pt-4 border-t border-zinc-800 flex flex-col gap-2">
+          <a href="tel:+919103463612" class="flex items-center justify-center gap-2 py-2.5 text-sm font-bold text-zinc-300 bg-zinc-900 border border-zinc-800 rounded-lg">
+            📞 Call +91 91034 63612
+          </a>
+          <button onclick="toggleMobileNav(); openAdminLoginModal()" class="flex items-center justify-center gap-2 py-2.5 text-sm font-bold text-red-400 bg-zinc-900 border border-zinc-800 rounded-lg">
+            🛡️ Open Admin Dashboard
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative w-full bg-[#050505] overflow-hidden pt-8 pb-16 lg:py-20 border-b border-[#1C1C22]">
+      <!-- Red Ambient Lighting Blobs -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#E50914]/15 rounded-full blur-[150px] pointer-events-none"></div>
+      <div class="absolute top-1/3 right-10 w-[400px] h-[400px] bg-[#991B1B]/15 rounded-full blur-[130px] pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Left Column: Copy & Actions -->
+          <div class="lg:col-span-7 space-y-6 z-10 text-left">
+            <div class="flex items-center gap-2.5 text-xs sm:text-sm font-bold tracking-widest uppercase text-red-500">
+              <span class="flex items-center gap-1.5 text-[#E50914]">
+                🔥 THE MUSCLE FACTORY
+              </span>
+              <span aria-hidden="true" class="text-zinc-600">·</span>
+              <span class="text-zinc-300">NOWHAR, CHARARI SHARIEF</span>
+              <span aria-hidden="true" class="text-zinc-600">·</span>
+              <span class="text-red-400">J&amp;K</span>
+            </div>
+
+            <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black uppercase tracking-tight text-white leading-[0.92]">
+              BUILD YOUR BODY.<br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#E50914] via-[#FF2E38] to-red-600">
+                TRANSFORM
+              </span><br>
+              YOUR LIFE.
+            </h1>
+
+            <p class="text-lg sm:text-xl text-zinc-300 max-w-xl font-normal leading-relaxed">
+              Your Fitness Journey Starts at <strong class="text-white font-semibold">The Muscle Factory</strong>. Experience elite iron equipment, scientific hypertrophy protocols, certified strength coaching, and high-speed biometric access.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-zinc-300 pt-1">
+              <span class="flex items-center gap-2">
+                <span class="text-[#E50914]">✔</span> Heavy Dumbbells up to 60KG
+              </span>
+              <span class="flex items-center gap-2">
+                <span class="text-[#E50914]">✔</span> Biometric High-Speed Check-In
+              </span>
+              <span class="flex items-center gap-2">
+                <span class="text-[#E50914]">✔</span> Certified Strength Coaches
+              </span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4">
+              <button onclick="openJoinModal()" class="flex items-center justify-center gap-3 px-8 py-4 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-xl font-black uppercase tracking-wider rounded-xl shadow-[0_0_30px_rgba(229,9,20,0.45)] hover:shadow-[0_0_45px_rgba(229,9,20,0.7)] transition-all duration-200 active:scale-95">
+                <span>Join Now</span>
+                <span>➔</span>
+              </button>
+
+              <a href="#plans" class="flex items-center justify-center gap-2 px-7 py-4 bg-[#121216] hover:bg-[#18181E] border border-[#2B2B34] hover:border-[#E50914]/60 text-white font-display text-xl font-bold uppercase tracking-wider rounded-xl transition-all duration-200">
+                Explore Memberships
+              </a>
+            </div>
+
+            <div class="flex items-center gap-2 pt-2 text-xs text-zinc-400">
+              <span class="text-[#E50914]">📍</span>
+              <span>Nowhar, Charari Sharief, Budgam, Jammu &amp; Kashmir 191112</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Visual Athlete Card & Official Emblem Badge -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-2xl overflow-hidden border border-[#26262E] bg-[#0E0E12] shadow-[0_20px_50px_rgba(0,0,0,0.85)] group h-[480px]">
+              <img src="/src/assets/images/hero_bodybuilder_athlete_1793424270351.jpg" alt="The Muscle Factory Athlete" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80';" class="w-full h-full object-cover filter contrast-110 brightness-95 group-hover:scale-105 transition-transform duration-700 ease-out">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/30 to-transparent"></div>
+              
+              <!-- Floating Official Creed Card with Real Emblem -->
+              <div class="absolute bottom-5 left-5 right-5 p-4 rounded-xl bg-black/85 backdrop-blur-md border border-red-900/40 flex items-center justify-between shadow-2xl">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#E50914] bg-black shrink-0 shadow-[0_0_15px_rgba(229,9,20,0.6)]">
+                    <img src="/the_muscle_factory_logo.png" onerror="this.onerror=null; this.src='/public/assets/the_muscle_factory_logo.png';" alt="Official Creed Emblem" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <div class="text-[10px] uppercase font-bold tracking-widest text-red-500">Official Creed</div>
+                    <div class="font-display text-xl sm:text-2xl font-black uppercase text-white tracking-wide">WHERE BOYS BECOME MEN</div>
+                  </div>
+                </div>
+                <div class="w-10 h-10 rounded-lg bg-[#E50914]/20 border border-[#E50914]/50 flex items-center justify-center text-[#E50914] text-lg font-bold">
+                  ⚡
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 4-Column Proof & Statistics Strip -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-[#0E0E12] border border-[#22222A] rounded-2xl text-center divide-y md:divide-y-0 md:divide-x divide-zinc-800">
+          <div class="p-3">
+            <div class="font-display text-4xl sm:text-5xl font-black text-white tracking-tight font-mono">500+</div>
+            <div class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-zinc-400 mt-1">Active Athletes</div>
+          </div>
+          <div class="p-3">
+            <div class="font-display text-4xl sm:text-5xl font-black text-[#E50914] tracking-tight font-mono">15+</div>
+            <div class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-zinc-400 mt-1">Expert Trainers</div>
+          </div>
+          <div class="p-3">
+            <div class="font-display text-4xl sm:text-5xl font-black text-red-400 tracking-tight font-mono">60 KG</div>
+            <div class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-zinc-400 mt-1">Max Dumbbells</div>
+          </div>
+          <div class="p-3">
+            <div class="font-display text-4xl sm:text-5xl font-black text-white tracking-tight font-mono">7 DAYS</div>
+            <div class="text-xs sm:text-sm font-semibold uppercase tracking-wider text-zinc-400 mt-1">Open 5:30 AM – 10:30 PM</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Highlights & Why Choose Section -->
+    <section id="about" class="py-20 bg-[#050505] border-b border-[#1C1C22]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        
+        <!-- Manifesto Split -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <div class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-[#E50914]">
+              <span>About The Iron Sanctuary</span>
+              <span aria-hidden="true" class="text-zinc-600">·</span>
+              <span class="text-zinc-400">Charari Sharief, J&amp;K</span>
+            </div>
+
+            <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase text-white tracking-tight leading-[0.95]">
+              BUILT FOR THOSE WHO DEMAND <span class="text-[#E50914]">MORE FROM THEMSELVES.</span>
+            </h2>
+
+            <p class="text-zinc-300 leading-relaxed text-base sm:text-lg">
+              Located in the heart of Nowhar, Charari Sharief, <strong class="text-white">The Muscle Factory</strong> was founded on a singular standard: physical transformation is earned through relentless discipline, pure iron, and uncompromising effort.
+            </p>
+
+            <p class="text-zinc-400 leading-relaxed text-sm sm:text-base">
+              We have eliminated the distractions of ordinary commercial gyms to engineer a true power center. Whether you are aiming to pack on dense muscle, sculpt competition-level conditioning, or build raw deadlift power, our floor provides heavy-duty calibrated plates, Olympic platforms, and expert mentorship. This is where boys become men.
+            </p>
+
+            <div class="grid grid-cols-2 gap-4 pt-2">
+              <div class="p-4 rounded-xl bg-[#0F0F14] border border-[#24242C]">
+                <div class="font-display text-2xl font-black text-red-400 uppercase">Biometric Entry</div>
+                <div class="text-xs text-zinc-400 mt-1">Instant front-desk fingerprint access and workout duration tracking.</div>
+              </div>
+              <div class="p-4 rounded-xl bg-[#0F0F14] border border-[#24242C]">
+                <div class="font-display text-2xl font-black text-[#E50914] uppercase">Zero Gimmicks</div>
+                <div class="text-xs text-zinc-400 mt-1">Olympic steel, calibrated plates, and dumbbells up to 60KG.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="relative rounded-2xl overflow-hidden border border-[#26262E] bg-[#0E0E12] shadow-2xl h-[440px] group">
+              <img src="/src/assets/images/gym_weight_training_zone_1793424269937.jpg" alt="Gym Floor" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=800&q=80';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 flex items-center justify-between">
+                <div>
+                  <div class="text-xs uppercase font-bold text-red-500 tracking-wider">Main Iron Floor</div>
+                  <div class="font-display text-2xl font-bold uppercase text-white">Heavy Dumbbell &amp; Barbell Zone</div>
+                </div>
+                <div class="px-3 py-1.5 rounded-lg bg-[#E50914]/20 border border-[#E50914]/40 text-[#E50914] text-xs font-mono uppercase font-bold">
+                  Nowhar, J&amp;K
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Choose Bento Grid -->
+        <div class="space-y-10">
+          <div class="text-center max-w-3xl mx-auto space-y-3">
+            <div class="text-xs font-bold uppercase tracking-widest text-[#E50914]">The Muscle Factory Standard</div>
+            <h2 class="font-display text-4xl sm:text-5xl font-black uppercase text-white tracking-tight">WHY CHOOSE THE MUSCLE FACTORY</h2>
+            <p class="text-zinc-400 text-sm sm:text-base">Everything in our facility is custom-designed to accelerate your hypertrophy, strength development, and physical endurance.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-8 rounded-2xl bg-[#0E0E12] border border-[#222228] hover:border-[#E50914]/50 transition-all duration-300 space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center text-[#E50914] text-2xl">🏋️</div>
+              <h3 class="font-display text-2xl font-black uppercase text-white tracking-wide">1. Heavy Industrial Iron</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">Olympic power racks, calibrated rubber-coated plates, and dumbbells ranging from 2.5KG to 60KG for maximum progressive overload.</p>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-[#0E0E12] border border-[#222228] hover:border-[#E50914]/50 transition-all duration-300 space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-red-900/20 border border-red-700/30 flex items-center justify-center text-red-400 text-2xl">🎯</div>
+              <h3 class="font-display text-2xl font-black uppercase text-white tracking-wide">2. Scientific Coaching</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">No bro-science or guesswork. Receive customized hypertrophy splits, biomechanical form correction, and macro targets.</p>
+            </div>
+
+            <div class="p-8 rounded-2xl bg-[#0E0E12] border border-[#222228] hover:border-[#E50914]/50 transition-all duration-300 space-y-4">
+              <div class="w-12 h-12 rounded-xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center text-[#E50914] text-2xl">⚡</div>
+              <h3 class="font-display text-2xl font-black uppercase text-white tracking-wide">3. High-Voltage Brotherhood</h3>
+              <p class="text-sm text-zinc-400 leading-relaxed">Train alongside dedicated athletes where intense work ethic is celebrated. No crowding, chalk bins ready, zero slacking.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-[#0A0A0E] border-b border-[#1C1C22]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <div class="text-xs font-bold uppercase tracking-widest text-[#E50914]">Comprehensive Capabilities</div>
+          <h2 class="font-display text-4xl sm:text-5xl font-black uppercase text-white tracking-tight">OUR SPECIALIZED SERVICES</h2>
+          <p class="text-zinc-400 text-sm sm:text-base">Every program at The Muscle Factory is designed for real physiological adaptation and measurable strength gains.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="services-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Plans Section -->
+    <section id="plans" class="py-20 bg-[#050505] border-b border-[#1C1C22]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <div class="flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest text-[#E50914]">
+            🔥 Invest In Pure Strength
+          </div>
+          <h2 class="font-display text-4xl sm:text-5xl lg:text-6xl font-black uppercase text-white tracking-tight">MEMBERSHIP PLANS</h2>
+          <p class="text-zinc-400 text-sm sm:text-base">No admission fees or hidden clauses. All tiers grant full iron floor access, locker rooms, and biometric check-in.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch" id="plans-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <div class="p-4 rounded-xl bg-[#0F0F14] border border-[#24242C] text-center max-w-2xl mx-auto text-xs text-zinc-400">
+          <span class="text-red-400 font-semibold uppercase">Gym Administrator Notice:</span> You can customize membership pricing, discounts, and benefits at any time directly in the Admin Dashboard.
+        </div>
+      </div>
+    </section>
+
+    <!-- BMI & Macro Calculator -->
+    <section id="calculator" class="py-20 bg-[#0A0A0E] border-b border-[#1C1C22]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <div class="text-xs font-bold uppercase tracking-widest text-red-500">Interactive Physiology Engine</div>
+          <h2 class="font-display text-4xl sm:text-5xl font-black uppercase text-white tracking-tight">BMI &amp; MACRO CALCULATOR</h2>
+          <p class="text-zinc-400 text-sm sm:text-base">Dial in your baseline metrics. Receive scientific daily caloric and protein targets designed for your transformation.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <!-- Controls Box -->
+          <div class="lg:col-span-7 bg-[#0E0E12] border border-[#24242C] rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Gender</label>
+                <div class="grid grid-cols-2 gap-2 bg-[#050505] p-1 rounded-xl border border-zinc-800">
+                  <button type="button" id="calc-btn-m" onclick="setCalcGender('male')" class="py-2 text-xs font-bold uppercase rounded-lg transition-colors bg-[#E50914] text-white">Male</button>
+                  <button type="button" id="calc-btn-f" onclick="setCalcGender('female')" class="py-2 text-xs font-bold uppercase rounded-lg transition-colors text-zinc-400 hover:text-white">Female</button>
+                </div>
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+                  <span>Age</span>
+                  <span id="calc-age-label" class="text-[#E50914] font-mono">24 Yrs</span>
+                </div>
+                <input type="range" id="calc-age" min="14" max="75" value="24" oninput="runCalculator()" class="w-full accent-[#E50914] bg-zinc-800 h-2 rounded-lg cursor-pointer">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+                  <span>Height</span>
+                  <span id="calc-height-label" class="text-[#E50914] font-mono">175 cm</span>
+                </div>
+                <input type="range" id="calc-height" min="130" max="215" value="175" oninput="runCalculator()" class="w-full accent-[#E50914] bg-zinc-800 h-2 rounded-lg cursor-pointer">
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">
+                  <span>Weight</span>
+                  <span id="calc-weight-label" class="text-[#E50914] font-mono">75 KG</span>
+                </div>
+                <input type="range" id="calc-weight" min="40" max="150" value="75" oninput="runCalculator()" class="w-full accent-[#E50914] bg-zinc-800 h-2 rounded-lg cursor-pointer">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Primary Fitness Objective</label>
+              <select id="calc-goal" onchange="runCalculator()" class="w-full px-4 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-sm text-white focus:outline-none focus:border-[#E50914]">
+                <option value="hypertrophy">Muscle Hypertrophy (+350 kcal surplus, 2.2g/kg protein)</option>
+                <option value="fatloss">Fat Shredding (-500 kcal deficit, 2.4g/kg protein)</option>
+                <option value="strength">Pure Strength &amp; PRs (+200 kcal surplus, 2.0g/kg protein)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Results Summary Box -->
+          <div class="lg:col-span-5 bg-[#0E0E12] border border-[#24242C] rounded-2xl p-6 sm:p-8 flex flex-col justify-between space-y-6">
+            <div class="space-y-6">
+              <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
+                <div class="text-xs font-bold uppercase tracking-wider text-zinc-400">Target Blueprint</div>
+                <div class="text-xs text-red-500 font-semibold font-mono">Calculated Live</div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl bg-[#050505] border border-zinc-800">
+                  <div class="text-xs text-zinc-400 uppercase font-semibold">Body Mass Index</div>
+                  <div id="calc-bmi-out" class="font-display text-4xl font-black text-white mt-1 font-mono">24.5</div>
+                  <div id="calc-cat-out" class="text-xs font-bold uppercase mt-1 text-emerald-400">Normal Weight</div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-[#050505] border border-zinc-800">
+                  <div class="text-xs text-zinc-400 uppercase font-semibold">Daily Calories</div>
+                  <div id="calc-cal-out" class="font-display text-4xl font-black text-[#E50914] mt-1 font-mono">2,650</div>
+                  <div class="text-xs font-bold uppercase text-zinc-400 mt-1">kcal / day</div>
+                </div>
+
+                <div class="col-span-2 p-4 rounded-xl bg-[#050505] border border-zinc-800 flex items-center justify-between">
+                  <div>
+                    <div class="text-xs text-zinc-400 uppercase font-semibold">Target Daily Protein</div>
+                    <div class="text-xs text-zinc-400">Optimal muscle protein synthesis</div>
+                  </div>
+                  <div class="text-right">
+                    <span id="calc-protein-out" class="font-display text-4xl font-black text-red-500 font-mono">165g</span>
+                    <div id="calc-protein-detail" class="text-[10px] text-zinc-400 uppercase font-semibold">2.2g per KG</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-[#14141A] border border-zinc-800/80 text-xs text-zinc-300 leading-relaxed">
+                <strong class="text-white">The Muscle Factory Protocol:</strong> Pair this with a 4-day Upper/Lower or 6-day Push/Pull/Legs heavy iron split with 3.0 liters of water daily.
+              </div>
+            </div>
+
+            <button onclick="openJoinModal()" class="w-full py-3.5 px-4 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-lg font-black uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-900/30">
+              <span>Join The Muscle Factory</span>
+              <span>➔</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contact" class="py-20 bg-[#050505] border-b border-[#1C1C22]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <div class="text-center max-w-3xl mx-auto space-y-3">
+          <div class="text-xs font-bold uppercase tracking-widest text-[#E50914]">Get In Touch</div>
+          <h2 class="font-display text-4xl sm:text-5xl font-black uppercase text-white tracking-tight">LOCATION &amp; MEMBERSHIP ENQUIRY</h2>
+          <p class="text-zinc-400 text-sm sm:text-base">Visit our facility in Nowhar, Charari Sharief or connect directly via WhatsApp and direct call.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="p-6 rounded-2xl bg-[#0E0E12] border border-[#24242C] space-y-3">
+                <div class="w-10 h-10 rounded-xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center text-[#E50914] text-xl">📍</div>
+                <div>
+                  <div class="text-xs uppercase font-bold text-zinc-400">Gym Location</div>
+                  <div class="font-display text-xl font-bold uppercase text-white mt-0.5">The Muscle Factory</div>
+                  <p class="text-xs text-zinc-300 mt-1 leading-relaxed">
+                    Nowhar, Charari Sharief,<br>
+                    District Budgam, Jammu &amp; Kashmir,<br>
+                    India — 191112
+                  </p>
+                </div>
+              </div>
+
+              <div class="p-6 rounded-2xl bg-[#0E0E12] border border-[#24242C] space-y-3 flex flex-col justify-between">
+                <div>
+                  <div class="w-10 h-10 rounded-xl bg-red-950/40 border border-red-700/40 flex items-center justify-center text-[#E50914] text-xl">📞</div>
+                  <div class="text-xs uppercase font-bold text-zinc-400 mt-3">Official Hotline</div>
+                  <div class="font-display text-xl font-black text-white font-mono mt-0.5">+91 91034 63612</div>
+                  <p class="text-xs text-zinc-400 mt-1">Available for membership admissions &amp; coaching bookings.</p>
+                </div>
+
+                <div class="pt-2 flex flex-col gap-2">
+                  <a href="tel:+919103463612" class="w-full py-2 px-3 bg-[#18181F] hover:bg-zinc-800 text-white rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors border border-zinc-700">
+                    Call +91 91034 63612
+                  </a>
+                  <a href="https://wa.me/919103463612?text=Hello%20The%20Muscle%20Factory!%20I%20am%20interested%20in%20gym%20membership." target="_blank" class="w-full py-2 px-3 bg-[#25D366] hover:bg-[#20ba59] text-black rounded-lg text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors shadow-md">
+                    Chat on WhatsApp
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Operating Hours -->
+            <div class="p-6 rounded-2xl bg-[#0E0E12] border border-[#24242C] space-y-3">
+              <div class="flex items-center justify-between">
+                <h3 class="font-display text-lg font-bold uppercase text-white">Training Hours &amp; Access Slots</h3>
+                <span class="text-xs text-red-400 font-bold uppercase">Open 7 Days</span>
+              </div>
+              <div class="grid grid-cols-2 gap-3 pt-2 text-xs">
+                <div class="p-3 rounded-xl bg-[#050505] border border-zinc-800">
+                  <div class="font-bold text-zinc-300 uppercase">Monday – Saturday</div>
+                  <div class="text-red-400 font-mono font-bold mt-0.5">5:30 AM – 10:30 PM</div>
+                </div>
+                <div class="p-3 rounded-xl bg-[#050505] border border-zinc-800">
+                  <div class="font-bold text-zinc-300 uppercase">Sunday</div>
+                  <div class="text-red-400 font-mono font-bold mt-0.5">7:00 AM – 2:00 PM</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google Maps Embed -->
+            <div class="rounded-2xl overflow-hidden border border-[#24242C] bg-[#0E0E12] p-4 space-y-2">
+              <div class="text-xs text-zinc-300 flex items-center justify-between">
+                <span class="font-bold uppercase tracking-wider">Nowhar, Charari Sharief Map</span>
+                <a href="https://maps.google.com/?q=Charari+Sharief+Jammu+and+Kashmir" target="_blank" class="text-[#E50914] hover:underline font-semibold">Open in Maps →</a>
+              </div>
+              <div class="w-full h-60 rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800">
+                <iframe title="The Muscle Factory Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13264.453982468305!2d74.7570418!3d33.8643869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38e191b29a27f6eb%3A0x8aa8ca348d689622!2sCharar-i-Sharief!5e0!3m2!1sen!2sin!4v1714500000000!5m2!1sen!2sin" width="100%" height="100%" style="border: 0; filter: invert(90%) hue-rotate(180deg) contrast(110%);" loading="lazy"></iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- WhatsApp Enquiry Form -->
+          <div class="lg:col-span-6 bg-[#0E0E12] border border-[#24242C] rounded-2xl p-6 sm:p-8 space-y-6">
+            <div>
+              <div class="text-xs font-bold uppercase tracking-widest text-[#25D366]">Direct WhatsApp Enquiry</div>
+              <h3 class="font-display text-3xl font-black uppercase text-white tracking-wide mt-1">SEND ADMISSION INQUIRY</h3>
+              <p class="text-xs text-zinc-400 mt-1">Dispatches your details to +91 91034 63612 on WhatsApp and registers your profile in the gym management system.</p>
+            </div>
+
+            <form onsubmit="handlePublicEnquiry(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Full Name *</label>
+                <input type="text" id="public-enq-name" required placeholder="e.g. Sahil Ahmad" class="w-full px-4 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#E50914]">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Phone Number *</label>
+                <input type="tel" id="public-enq-phone" required placeholder="+91 91034 63612" class="w-full px-4 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#E50914]">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Primary Fitness Goal</label>
+                  <select id="public-enq-goal" class="w-full px-3 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-sm text-white focus:outline-none focus:border-[#E50914]">
+                    <option value="Muscle Building">Muscle Building</option>
+                    <option value="Bodybuilding & Hypertrophy">Bodybuilding &amp; Hypertrophy</option>
+                    <option value="Weight Loss & Conditioning">Weight Loss &amp; Conditioning</option>
+                    <option value="Personal Training 1-on-1">Personal Training 1-on-1</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Interested Plan</label>
+                  <select id="public-enq-plan" class="w-full px-3 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-sm text-white focus:outline-none focus:border-[#E50914]">
+                    <option value="Monthly Membership">Monthly Membership (₹1,400)</option>
+                    <option value="Quarterly Membership">Quarterly Membership (₹3,600)</option>
+                    <option value="Half-Yearly Membership">Half-Yearly Membership (₹6,500)</option>
+                    <option value="Yearly Iron VIP">Yearly Iron VIP (₹11,900)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5">Message / Training Slot</label>
+                <textarea id="public-enq-msg" rows="3" placeholder="Preferred workout timings, prior training history..." class="w-full px-4 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-sm text-white placeholder-zinc-500 focus:outline-none focus:border-[#E50914]"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-4 bg-[#25D366] hover:bg-[#20ba59] text-black font-display text-lg font-black uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20 active:scale-98">
+                <span>Send Enquiry via WhatsApp (+91 91034 63612)</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#040406] border-t border-[#181820] text-zinc-400 text-sm mt-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="flex items-center gap-3.5">
+              <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#E50914] bg-black shrink-0 shadow-[0_0_15px_rgba(229,9,20,0.5)]">
+                <img src="/the_muscle_factory_logo.png" onerror="this.onerror=null; this.src='/public/assets/the_muscle_factory_logo.png';" alt="The Muscle Factory" class="w-full h-full object-cover">
+              </div>
+              <div class="flex flex-col">
+                <span class="font-display text-2xl font-black tracking-wider uppercase text-white leading-none">
+                  THE MUSCLE <span class="text-[#E50914]">FACTORY</span>
+                </span>
+                <span class="text-[10px] uppercase font-bold tracking-[0.22em] text-red-500 mt-0.5">WHERE BOYS BECOME MEN</span>
+              </div>
+            </div>
+            <p class="text-xs text-zinc-400 max-w-sm leading-relaxed">
+              Nowhar, Charari Sharief's premier strength &amp; bodybuilding facility. Equipping athletes with calibrated iron, scientific programming, and relentless discipline. Where boys become men.
+            </p>
+            <div class="text-xs text-zinc-400 space-y-1">
+              <div>📍 Nowhar, Charari Sharief, Jammu &amp; Kashmir 191112</div>
+              <div>📞 <a href="tel:+919103463612" class="hover:text-white font-mono">+91 91034 63612</a></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-3 space-y-3">
+            <div class="text-xs font-bold uppercase tracking-widest text-white">Navigation</div>
+            <ul class="space-y-2 text-xs text-zinc-400">
+              <li><a href="#about" class="hover:text-[#E50914]">About Facility &amp; Creed</a></li>
+              <li><a href="#services" class="hover:text-[#E50914]">Bodybuilding Programs</a></li>
+              <li><a href="#plans" class="hover:text-[#E50914]">Membership Pricing</a></li>
+              <li><a href="#calculator" class="hover:text-[#E50914]">BMI &amp; Macro Calculator</a></li>
+              <li><a href="#contact" class="hover:text-[#E50914]">Location Map &amp; Call</a></li>
+            </ul>
+          </div>
+
+          <div class="lg:col-span-4 space-y-4">
+            <div class="text-xs font-bold uppercase tracking-widest text-white">Operations &amp; Admin</div>
+            <div class="p-4 rounded-xl bg-[#0E0E12] border border-zinc-800 space-y-1 text-xs">
+              <div class="text-white font-semibold">Mon – Sat: 5:30 AM – 10:30 PM</div>
+              <div class="text-zinc-400">Sunday: 7:00 AM – 2:00 PM (Recovery)</div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="openJoinModal()" class="px-4 py-2 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-sm font-bold uppercase tracking-wider rounded-lg transition-colors">Join Now</button>
+              <button onclick="openAdminLoginModal()" class="px-4 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors">Admin Portal</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-400">
+          <div>© <span id="site-yr">2026</span> The Muscle Factory. Nowhar, Charari Sharief, J&amp;K. All rights reserved.</div>
+          <div class="text-red-500 font-semibold uppercase tracking-wider">Where Boys Become Men · Red &amp; Black Athletic Iron Hub</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/919103463612?text=Hello%20The%20Muscle%20Factory!%20I%20am%20interested%20in%20gym%20membership." target="_blank" class="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-4 py-3 bg-[#25D366] hover:bg-[#20ba59] text-black font-display font-black text-sm uppercase tracking-wider rounded-full shadow-[0_0_25px_rgba(37,211,102,0.4)] transition-all active:scale-95">
+      <span>💬</span>
+      <span class="hidden sm:inline">Chat With Gym</span>
+      <span class="sm:hidden">WhatsApp</span>
+    </a>
+
+  </div>
+
+  <!-- ==========================================================================
+       ADMIN GYM MANAGEMENT PORTAL VIEW
+       ========================================================================== -->
+  <div id="admin-view" class="hidden min-h-screen bg-[#050505] text-white flex flex-col">
+    <header class="sticky top-0 z-40 bg-[#0C0C10]/95 backdrop-blur-md border-b border-[#202026]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        
+        <div class="flex items-center gap-3">
+          <button onclick="exitAdminPortal()" class="p-2 text-zinc-400 hover:text-white rounded-lg hover:bg-zinc-800 transition-colors" title="Back to Public Website">
+            ← Website
+          </button>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-[#E50914] bg-black shrink-0">
+              <img src="/the_muscle_factory_logo.png" onerror="this.onerror=null; this.src='/public/assets/the_muscle_factory_logo.png';" alt="The Muscle Factory" class="w-full h-full object-cover">
+            </div>
+            <div>
+              <span class="font-display text-xl font-black uppercase text-white tracking-wide">
+                THE MUSCLE FACTORY <span class="text-[#E50914]">HQ</span>
+              </span>
+              <div class="text-[10px] text-red-500 font-bold uppercase tracking-widest leading-none mt-0.5">
+                Where Boys Become Men · Management &amp; Biometrics
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <nav class="hidden lg:flex items-center gap-1 p-1 bg-[#131318] border border-zinc-800 rounded-xl text-xs font-bold uppercase tracking-wider">
+          <button onclick="setAdminTab('overview', this)" class="admin-tab-btn active px-3 py-2 rounded-lg bg-[#E50914] text-white">Dashboard</button>
+          <button onclick="setAdminTab('members', this)" class="admin-tab-btn px-3 py-2 rounded-lg text-zinc-400 hover:text-white">Members (<span id="tab-cnt-members">8</span>)</button>
+          <button onclick="setAdminTab('payments', this)" class="admin-tab-btn px-3 py-2 rounded-lg text-zinc-400 hover:text-white">Payments</button>
+          <button onclick="setAdminTab('attendance', this)" class="admin-tab-btn px-3 py-2 rounded-lg text-zinc-400 hover:text-white">Attendance (<span id="tab-cnt-att">5</span>)</button>
+          <button onclick="setAdminTab('plans', this)" class="admin-tab-btn px-3 py-2 rounded-lg text-zinc-400 hover:text-white">Plans</button>
+          <button onclick="setAdminTab('leads', this)" class="admin-tab-btn px-3 py-2 rounded-lg text-zinc-400 hover:text-white">Inquiries (<span id="tab-cnt-leads">2</span>)</button>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button onclick="openKioskModal()" class="flex items-center gap-1.5 px-3 py-2 bg-[#E50914]/20 hover:bg-[#E50914]/30 text-white border border-[#E50914]/40 rounded-xl text-xs font-bold uppercase transition-colors">
+            ⚡ Biometric Kiosk
+          </button>
+          <button onclick="exitAdminPortal()" class="p-2 text-zinc-400 hover:text-rose-400 rounded-lg hover:bg-zinc-800 transition-colors" title="Lock Admin Console">
+            Logout
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Tabs Bar -->
+      <div class="lg:hidden flex items-center gap-2 overflow-x-auto px-4 py-2 bg-[#0A0A0D] border-t border-zinc-800 text-xs font-bold uppercase">
+        <button onclick="setAdminTab('overview', this)" class="admin-tab-btn active px-3 py-1.5 rounded-lg bg-[#E50914] text-white">Dashboard</button>
+        <button onclick="setAdminTab('members', this)" class="admin-tab-btn px-3 py-1.5 rounded-lg text-zinc-400">Members</button>
+        <button onclick="setAdminTab('payments', this)" class="admin-tab-btn px-3 py-1.5 rounded-lg text-zinc-400">Payments</button>
+        <button onclick="setAdminTab('attendance', this)" class="admin-tab-btn px-3 py-1.5 rounded-lg text-zinc-400">Attendance</button>
+        <button onclick="setAdminTab('plans', this)" class="admin-tab-btn px-3 py-1.5 rounded-lg text-zinc-400">Plans</button>
+        <button onclick="setAdminTab('leads', this)" class="admin-tab-btn px-3 py-1.5 rounded-lg text-zinc-400">Inquiries</button>
+      </div>
+    </header>
+
+    <main class="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+      
+      <!-- TAB 1: OVERVIEW -->
+      <div id="admin-sec-overview" class="admin-sec space-y-8">
+        <div class="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl bg-[#0E0E12] border border-[#24242C]">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-display text-2xl font-black uppercase text-white tracking-wide">OPERATIONS DESK</span>
+              <span class="text-xs text-red-400 font-bold uppercase px-2 py-0.5 rounded bg-red-950/40 border border-red-700/40">Live Facility</span>
+            </div>
+            <div class="text-xs text-zinc-400 mt-0.5">Nowhar, Charari Sharief · Active daily check-ins &amp; memberships</div>
+          </div>
+          <div class="flex flex-wrap gap-2.5">
+            <button onclick="openKioskModal()" class="px-4 py-2 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-sm font-black uppercase tracking-wider rounded-xl transition-all shadow-md shadow-red-900/30">
+              ⚡ Launch Biometric Kiosk
+            </button>
+            <button onclick="openAddMemberModal()" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl text-xs font-bold uppercase border border-zinc-700">
+              + Add Member
+            </button>
+            <button onclick="openRecordPaymentModal()" class="px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl text-xs font-bold uppercase border border-zinc-700">
+              Record Payment
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 KPI Stat Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="p-5 rounded-2xl bg-[#0E0E12] border border-[#222228]">
+            <div class="text-[11px] font-bold uppercase text-zinc-400">Total Members</div>
+            <div id="kpi-total" class="font-display text-3xl font-black text-white mt-2 font-mono">8</div>
+            <div class="text-[11px] text-zinc-400 mt-1">Registered athletes</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-[#0E0E12] border border-emerald-500/30">
+            <div class="text-[11px] font-bold uppercase text-emerald-400">Active</div>
+            <div id="kpi-active" class="font-display text-3xl font-black text-emerald-400 mt-2 font-mono">7</div>
+            <div class="text-[11px] text-zinc-400 mt-1">Good standing</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-[#0E0E12] border border-rose-500/30">
+            <div class="text-[11px] font-bold uppercase text-rose-400">Expired</div>
+            <div id="kpi-expired" class="font-display text-3xl font-black text-rose-400 mt-2 font-mono">1</div>
+            <div class="text-[11px] text-zinc-400 mt-1">Needs renewal</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-[#0E0E12] border border-[#E50914]/40">
+            <div class="text-[11px] font-bold uppercase text-[#E50914]">Today's Check-ins</div>
+            <div id="kpi-today" class="font-display text-3xl font-black text-[#E50914] mt-2 font-mono">5</div>
+            <div class="text-[11px] text-zinc-400 mt-1">Biometric scans</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-[#0E0E12] border border-red-500/30">
+            <div class="text-[11px] font-bold uppercase text-red-400">Monthly Revenue</div>
+            <div id="kpi-rev" class="font-display text-3xl font-black text-red-400 mt-2 font-mono truncate">₹88,500</div>
+            <div class="text-[11px] text-zinc-400 mt-1">Collected</div>
+          </div>
+          <div class="p-5 rounded-2xl bg-[#0E0E12] border border-[#222228]">
+            <div class="text-[11px] font-bold uppercase text-zinc-400">Pending Dues</div>
+            <div id="kpi-dues" class="font-display text-3xl font-black text-white mt-2 font-mono truncate">₹1,400</div>
+            <div class="text-[11px] text-zinc-400 mt-1">Overdue memberships</div>
+          </div>
+        </div>
+
+        <!-- Recent Registrations Table -->
+        <div class="bg-[#0E0E12] border border-[#222228] rounded-2xl p-6 space-y-4">
+          <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+            <div>
+              <h3 class="font-display text-xl font-bold uppercase text-white">Recent Member Registrations</h3>
+              <div class="text-xs text-zinc-400">Latest enrolled athletes at The Muscle Factory</div>
+            </div>
+            <button onclick="setAdminTab('members')" class="text-xs font-bold uppercase text-[#E50914] hover:underline">
+              Manage All Members →
+            </button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="border-b border-zinc-800 text-zinc-400 uppercase font-semibold">
+                  <th class="py-3 px-3">Athlete</th>
+                  <th class="py-3 px-3">ID</th>
+                  <th class="py-3 px-3">Plan</th>
+                  <th class="py-3 px-3">Joined</th>
+                  <th class="py-3 px-3">Expiry</th>
+                  <th class="py-3 px-3">Status</th>
+                  <th class="py-3 px-3">Payment</th>
+                </tr>
+              </thead>
+              <tbody id="overview-recent-rows" class="divide-y divide-zinc-800/60"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: MEMBERS MANAGEMENT -->
+      <div id="admin-sec-members" class="admin-sec hidden space-y-6">
+        <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-5 rounded-2xl bg-[#0E0E12] border border-[#222228]">
+          <input type="text" id="member-search-input" placeholder="Search by name, phone or MF-ID..." oninput="renderMembersTable()" class="px-4 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-xs text-white max-w-md w-full focus:outline-none focus:border-[#E50914]">
+          <div class="flex items-center gap-2">
+            <button onclick="setMemberFilter('all')" class="mem-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold uppercase bg-[#E50914] text-white">All</button>
+            <button onclick="setMemberFilter('active')" class="mem-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold uppercase text-zinc-400 hover:text-white">Active</button>
+            <button onclick="setMemberFilter('expired')" class="mem-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold uppercase text-zinc-400 hover:text-white">Expired</button>
+            <button onclick="openAddMemberModal()" class="px-4 py-2 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-sm font-black uppercase tracking-wider rounded-xl shadow-md">+ Add Member</button>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-[#0E0E12] border border-[#222228] overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="border-b border-zinc-800 bg-[#0A0A0D] text-zinc-400 uppercase font-semibold">
+                  <th class="py-3.5 px-4">Member Info</th>
+                  <th class="py-3.5 px-4">Member ID</th>
+                  <th class="py-3.5 px-4">Plan / Tier</th>
+                  <th class="py-3.5 px-4">Start Date</th>
+                  <th class="py-3.5 px-4">Expiry Date</th>
+                  <th class="py-3.5 px-4">Status</th>
+                  <th class="py-3.5 px-4">Total Paid</th>
+                  <th class="py-3.5 px-4 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="members-table-rows" class="divide-y divide-zinc-800/60"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: PAYMENTS MANAGEMENT -->
+      <div id="admin-sec-payments" class="admin-sec hidden space-y-6">
+        <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-5 rounded-2xl bg-[#0E0E12] border border-[#222228]">
+          <input type="text" id="pay-search-input" placeholder="Search payments by member, phone or receipt #..." oninput="renderPaymentsTable()" class="px-4 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-xs text-white max-w-md w-full focus:outline-none focus:border-[#E50914]">
+          <button onclick="openRecordPaymentModal()" class="px-5 py-2.5 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-sm font-black uppercase tracking-wider rounded-xl shadow-md">+ Record New Payment</button>
+        </div>
+
+        <div class="rounded-2xl bg-[#0E0E12] border border-[#222228] overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="border-b border-zinc-800 bg-[#0A0A0D] text-zinc-400 uppercase font-semibold">
+                  <th class="py-3.5 px-4">Receipt Ref</th>
+                  <th class="py-3.5 px-4">Member Name</th>
+                  <th class="py-3.5 px-4">Plan</th>
+                  <th class="py-3.5 px-4">Amount</th>
+                  <th class="py-3.5 px-4">Date</th>
+                  <th class="py-3.5 px-4">Channel</th>
+                  <th class="py-3.5 px-4">Status</th>
+                  <th class="py-3.5 px-4 text-right">Receipt</th>
+                </tr>
+              </thead>
+              <tbody id="payments-table-rows" class="divide-y divide-zinc-800/60"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: ATTENDANCE & BIOMETRIC -->
+      <div id="admin-sec-attendance" class="admin-sec hidden space-y-6">
+        <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-5 rounded-2xl bg-[#0E0E12] border border-[#222228]">
+          <div>
+            <h3 class="font-display text-2xl font-black uppercase text-white">Daily Attendance Log</h3>
+            <div class="text-xs text-zinc-400">Live biometric and front-desk entry punches</div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button onclick="openKioskModal()" class="px-4 py-2.5 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-sm font-black uppercase tracking-wider rounded-xl shadow-md">⚡ Front-Desk Kiosk</button>
+            <button onclick="openManualCheckInModal()" class="px-4 py-2.5 bg-zinc-800 hover:bg-zinc-700 text-white rounded-xl text-xs font-bold uppercase border border-zinc-700">+ Manual Punch</button>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-[#0E0E12] border border-[#222228] overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="border-b border-zinc-800 bg-[#0A0A0D] text-zinc-400 uppercase font-semibold">
+                  <th class="py-3.5 px-4">Athlete</th>
+                  <th class="py-3.5 px-4">Member ID</th>
+                  <th class="py-3.5 px-4">Date</th>
+                  <th class="py-3.5 px-4">Check-In Time</th>
+                  <th class="py-3.5 px-4">Check-Out Time</th>
+                  <th class="py-3.5 px-4">Mode</th>
+                  <th class="py-3.5 px-4">Status</th>
+                  <th class="py-3.5 px-4 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody id="attendance-table-rows" class="divide-y divide-zinc-800/60"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 5: PLANS MANAGER -->
+      <div id="admin-sec-plans" class="admin-sec hidden space-y-6">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 rounded-2xl bg-[#0E0E12] border border-[#222228]">
+          <div>
+            <h3 class="font-display text-2xl font-black uppercase text-white">MEMBERSHIP PLANS &amp; PRICING EDITOR</h3>
+            <p class="text-xs text-zinc-400 mt-0.5">Edit fees and perks. Updates reflect across the entire public website.</p>
+          </div>
+          <button onclick="resetDefaultPlans()" class="px-3.5 py-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-400 hover:text-white rounded-xl text-xs font-bold uppercase">Reset Defaults</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="admin-plans-editor-grid"></div>
+      </div>
+
+      <!-- TAB 6: LEADS & INQUIRIES -->
+      <div id="admin-sec-leads" class="admin-sec hidden space-y-6">
+        <div class="flex items-center justify-between p-5 rounded-2xl bg-[#0E0E12] border border-[#222228]">
+          <div>
+            <h3 class="font-display text-2xl font-black uppercase text-white">WEBSITE PROSPECTS &amp; INQUIRIES</h3>
+            <p class="text-xs text-zinc-400 mt-0.5">Leads submitted through the public website lead form</p>
+          </div>
+          <div class="text-xs text-emerald-400 font-bold uppercase px-3 py-1 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">WhatsApp Connected</div>
+        </div>
+
+        <div class="rounded-2xl bg-[#0E0E12] border border-[#222228] overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs">
+              <thead>
+                <tr class="border-b border-zinc-800 bg-[#0A0A0D] text-zinc-400 uppercase font-semibold">
+                  <th class="py-3.5 px-4">Prospect</th>
+                  <th class="py-3.5 px-4">Phone</th>
+                  <th class="py-3.5 px-4">Goal</th>
+                  <th class="py-3.5 px-4">Plan</th>
+                  <th class="py-3.5 px-4">Date</th>
+                  <th class="py-3.5 px-4">Message</th>
+                  <th class="py-3.5 px-4">Status</th>
+                  <th class="py-3.5 px-4 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody id="leads-table-rows" class="divide-y divide-zinc-800/60"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ==========================================================================
+       MODALS: JOIN FLOW, KIOSK SCANNER, ADMIN LOGIN, ADD MEMBER & INVOICE
+       ========================================================================== -->
+
+  <!-- Public Join / Stripe Simulation Modal -->
+  <div id="join-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+    <div class="relative w-full max-w-2xl bg-[#101014] border border-[#2B2B34] rounded-2xl shadow-2xl p-6 sm:p-8 my-8 text-white space-y-6">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
+        <div>
+          <span class="text-xs text-red-500 font-bold uppercase">Official Athlete Enrollment</span>
+          <h3 class="font-display text-2xl font-black uppercase text-white">JOIN THE MUSCLE FACTORY</h3>
+        </div>
+        <button onclick="closeJoinModal()" class="p-1.5 text-zinc-400 hover:text-white rounded-lg">✕</button>
+      </div>
+
+      <form id="join-form" onsubmit="handleJoinEnrollment(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1">Select Membership Plan</label>
+          <select id="join-plan-select" onchange="syncJoinPlanPrice()" class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-xs text-white focus:outline-none focus:border-[#E50914]"></select>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1">Full Legal Name *</label>
+            <input type="text" id="join-name" required placeholder="e.g. Zubair Ahmad Mir" class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-xs text-white focus:outline-none focus:border-[#E50914]">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1">Phone Number (WhatsApp) *</label>
+            <input type="tel" id="join-phone" required placeholder="+91 91034 63612" class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-xs text-white focus:outline-none focus:border-[#E50914]">
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1">Blood Group</label>
+            <select id="join-blood" class="w-full px-3 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-xs text-white focus:outline-none focus:border-[#E50914]">
+              <option value="O+">O+</option>
+              <option value="A+">A+</option>
+              <option value="B+">B+</option>
+              <option value="AB+">AB+</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1">Payment Method</label>
+            <select id="join-method" class="w-full px-3 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-xs text-white focus:outline-none focus:border-[#E50914]">
+              <option value="Stripe / Card">Stripe / Credit or Debit Card</option>
+              <option value="UPI">UPI (GPay / PhonePe / Paytm)</option>
+              <option value="Cash">Cash at Reception</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Simulated Stripe Card Form -->
+        <div class="p-4 rounded-xl bg-[#050505] border border-zinc-800 space-y-3">
+          <div class="flex items-center justify-between text-xs text-zinc-400">
+            <span class="font-bold text-white flex items-center gap-1">🔒 Stripe 256-Bit Encrypted Billing</span>
+            <span class="text-[10px] text-zinc-500 font-mono">Simulated Sandbox</span>
+          </div>
+          <input type="text" value="4242 •••• •••• 4242" class="w-full px-3 py-2 bg-[#121216] border border-zinc-700 rounded-lg text-xs font-mono tracking-widest text-white">
+          <div class="grid grid-cols-2 gap-3">
+            <input type="text" value="12/28" class="px-3 py-2 bg-[#121216] border border-zinc-700 rounded-lg text-xs font-mono text-white">
+            <input type="text" value="888" class="px-3 py-2 bg-[#121216] border border-zinc-700 rounded-lg text-xs font-mono text-white">
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-4 border-t border-zinc-800">
+          <div class="text-xs text-zinc-400">
+            Total Payable: <strong id="join-pay-amount" class="text-white font-mono text-base font-bold">₹3,600</strong>
+          </div>
+          <button type="submit" id="join-btn-submit" class="px-6 py-3 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-base font-black uppercase tracking-wider rounded-xl transition-all shadow-md shadow-red-900/40">
+            Pay &amp; Activate Pass ➔
+          </button>
+        </div>
+      </form>
+
+      <!-- Digital Pass View (Hidden until paid) -->
+      <div id="join-pass-result" class="hidden text-center space-y-5">
+        <div class="w-14 h-14 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mx-auto text-2xl">✔</div>
+        <div>
+          <h3 class="font-display text-3xl font-black uppercase text-white">WELCOME TO THE MUSCLE FACTORY!</h3>
+          <p class="text-xs text-zinc-400 mt-1">Payment verified. Your official digital membership pass and biometric access are now active.</p>
+        </div>
+
+        <div id="printable-receipt-card" class="p-6 rounded-2xl bg-gradient-to-br from-[#14141A] to-[#050505] border-2 border-[#E50914] text-left space-y-4">
+          <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full overflow-hidden border border-[#E50914]">
+                <img src="/the_muscle_factory_logo.png" onerror="this.onerror=null; this.src='/public/assets/the_muscle_factory_logo.png';" alt="Emblem" class="w-full h-full object-cover">
+              </div>
+              <div>
+                <div class="font-display text-xl font-black uppercase text-white">THE MUSCLE FACTORY</div>
+                <div class="text-[10px] text-red-500 font-bold uppercase tracking-widest">WHERE BOYS BECOME MEN · CHARARI SHARIEF</div>
+              </div>
+            </div>
+            <span class="text-[10px] font-mono uppercase px-2.5 py-1 bg-[#E50914] text-white font-black rounded">ACTIVE MEMBER</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 text-xs">
+            <div>
+              <span class="text-zinc-500 uppercase text-[10px] block">Athlete Name</span>
+              <strong id="pass-res-name" class="font-display text-lg font-bold text-white uppercase">—</strong>
+            </div>
+            <div>
+              <span class="text-zinc-500 uppercase text-[10px] block">Member ID</span>
+              <strong id="pass-res-id" class="font-display text-lg font-black text-[#E50914] font-mono">—</strong>
+            </div>
+            <div>
+              <span class="text-zinc-500 uppercase text-[10px] block">Membership Plan</span>
+              <span id="pass-res-plan" class="font-semibold text-zinc-200">—</span>
+            </div>
+            <div>
+              <span class="text-zinc-500 uppercase text-[10px] block">Valid Until</span>
+              <span id="pass-res-exp" class="font-bold text-red-400 font-mono">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-3 pt-2">
+          <button onclick="window.print()" class="px-5 py-2.5 bg-[#181820] hover:bg-zinc-800 border border-zinc-700 text-white rounded-xl text-xs font-bold uppercase tracking-wider">🖨️ Print Receipt</button>
+          <button onclick="closeJoinModal()" class="px-6 py-2.5 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-sm font-black uppercase tracking-wider rounded-xl">Done / Finish</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin Login Modal -->
+  <div id="admin-login-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+    <div class="relative w-full max-w-md bg-[#101014] border border-[#2B2B34] rounded-2xl p-6 sm:p-8 shadow-2xl text-white space-y-6 text-center">
+      <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-[#E50914] bg-black mx-auto shadow-[0_0_25px_rgba(229,9,20,0.5)]">
+        <img src="/the_muscle_factory_logo.png" onerror="this.onerror=null; this.src='/public/assets/the_muscle_factory_logo.png';" alt="The Muscle Factory" class="w-full h-full object-cover">
+      </div>
+      <div>
+        <h2 class="font-display text-2xl font-black uppercase text-white tracking-wide">THE MUSCLE FACTORY ADMIN</h2>
+        <p class="text-xs text-red-500 font-semibold tracking-wider uppercase mt-1">Where Boys Become Men</p>
+        <p class="text-xs text-zinc-400 mt-0.5">Nowhar, Charari Sharief Management Console</p>
+      </div>
+
+      <form onsubmit="handleAdminAuth(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5 flex justify-between">
+            <span>Security PIN</span>
+            <span class="text-red-400 font-mono text-[11px]">Default: 1234</span>
+          </label>
+          <input type="password" id="admin-auth-pin" placeholder="Enter PIN (1234)" class="w-full px-4 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-center text-lg font-mono text-white tracking-widest focus:outline-none focus:border-[#E50914]">
+        </div>
+        <button type="submit" class="w-full py-3.5 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-base font-black uppercase tracking-wider rounded-xl transition-all shadow-md shadow-red-900/40">
+          Unlock Admin Dashboard ➔
+        </button>
+      </form>
+
+      <div class="pt-2 border-t border-zinc-800 space-y-2">
+        <button onclick="quickAuthAdmin()" class="w-full py-2.5 bg-[#181820] hover:bg-zinc-800 text-red-400 border border-zinc-700 rounded-xl text-xs font-bold uppercase tracking-wider">
+          ⚡ Quick 1-Click Demo Login
+        </button>
+        <button onclick="closeAdminLoginModal()" class="w-full py-2 text-xs text-zinc-400 hover:text-white">
+          Back to Public Website
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Front-Desk Biometric Kiosk Modal -->
+  <div id="kiosk-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/90 backdrop-blur-md">
+    <div class="relative w-full max-w-xl bg-[#101014] border border-[#2B2B34] rounded-2xl shadow-2xl p-6 sm:p-8 text-white space-y-6 text-center">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+        <div class="text-left">
+          <span class="text-xs text-red-500 font-bold uppercase">Front-Desk Attendance Terminal</span>
+          <h3 class="font-display text-2xl font-black uppercase text-white">BIOMETRIC CHECK-IN KIOSK</h3>
+        </div>
+        <button onclick="closeKioskModal()" class="p-1.5 text-zinc-400 hover:text-white rounded-lg">✕</button>
+      </div>
+
+      <!-- Fingerprint Touch Pad with Red Laser Animation -->
+      <div id="fingerprint-scan-box" onclick="performKioskScan()" class="relative w-44 h-44 rounded-3xl border-2 border-zinc-700 hover:border-[#E50914] bg-[#050505] mx-auto flex flex-col items-center justify-center cursor-pointer overflow-hidden transition-all group">
+        <span class="text-5xl group-hover:scale-110 transition-transform">🖐️</span>
+        <div id="kiosk-laser" class="hidden absolute inset-x-0 h-1 bg-[#E50914] shadow-[0_0_15px_#E50914] animate-laser"></div>
+        <span class="text-[10px] font-bold uppercase text-zinc-400 tracking-wider mt-2">Tap Sensor to Scan</span>
+      </div>
+
+      <div class="flex gap-2 max-w-md mx-auto">
+        <input type="text" id="kiosk-id-query" placeholder="Or enter Member ID (e.g. MF-1001)..." class="flex-1 px-4 py-3 bg-[#050505] border border-zinc-700 rounded-xl text-center font-mono text-sm text-white focus:outline-none focus:border-[#E50914]">
+        <button onclick="performKioskScan()" class="px-5 py-3 bg-[#E50914] hover:bg-[#C70811] text-white font-display font-black uppercase tracking-wider rounded-xl text-sm shadow-md">Scan</button>
+      </div>
+
+      <div id="kiosk-result-card" class="hidden p-4 rounded-xl border text-left text-xs space-y-1"></div>
+
+      <div class="flex flex-wrap items-center justify-center gap-2 pt-1">
+        <span class="text-[11px] text-zinc-500 font-bold uppercase">Quick Demo Lifters:</span>
+        <button onclick="quickFillKiosk('MF-1001')" class="px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] font-mono text-zinc-300">Owais (MF-1001)</button>
+        <button onclick="quickFillKiosk('MF-1002')" class="px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] font-mono text-zinc-300">Zubair (MF-1002)</button>
+        <button onclick="quickFillKiosk('MF-1005')" class="px-2.5 py-1 rounded bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-[11px] font-mono text-zinc-300">Aaqib (Expired)</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Member Modal -->
+  <div id="add-member-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+    <div class="relative w-full max-w-lg bg-[#101014] border border-[#2B2B34] rounded-2xl shadow-2xl p-6 sm:p-8 my-8 text-white space-y-6">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+        <h3 class="font-display text-2xl font-black uppercase text-white">Enroll New Member</h3>
+        <button onclick="closeAddMemberModal()" class="p-1.5 text-zinc-400 hover:text-white rounded-lg">✕</button>
+      </div>
+
+      <form onsubmit="handleAdminCreateMember(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Athlete Name *</label>
+          <input type="text" id="add-mem-name" required placeholder="e.g. Faisal Rashid" class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]">
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Phone Number *</label>
+            <input type="tel" id="add-mem-phone" required placeholder="+91 91034 63612" class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]">
+          </div>
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Emergency Phone</label>
+            <input type="tel" id="add-mem-emer" placeholder="+91 94190 00000" class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Plan Tier</label>
+            <select id="add-mem-plan" class="w-full px-3 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]"></select>
+          </div>
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Blood Group</label>
+            <select id="add-mem-blood" class="w-full px-3 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]">
+              <option value="O+">O+</option>
+              <option value="A+">A+</option>
+              <option value="B+">B+</option>
+              <option value="AB+">AB+</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Coach Notes / Goals</label>
+          <textarea id="add-mem-notes" rows="2" placeholder="Focus on powerlifting, diet targets..." class="w-full px-3.5 py-2 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]"></textarea>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-3 border-t border-zinc-800">
+          <button type="button" onclick="closeAddMemberModal()" class="px-4 py-2 bg-zinc-900 text-zinc-400 rounded-xl font-bold uppercase">Cancel</button>
+          <button type="submit" class="px-6 py-2 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-sm font-black uppercase tracking-wider rounded-xl shadow-md">Enroll &amp; Issue ID</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Record Payment Modal -->
+  <div id="record-payment-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+    <div class="relative w-full max-w-lg bg-[#101014] border border-[#2B2B34] rounded-2xl shadow-2xl p-6 sm:p-8 my-8 text-white space-y-6">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+        <h3 class="font-display text-2xl font-black uppercase text-white">Record Membership Payment</h3>
+        <button onclick="closeRecordPaymentModal()" class="p-1.5 text-zinc-400 hover:text-white rounded-lg">✕</button>
+      </div>
+
+      <form onsubmit="handleAdminRecordPayment(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Select Member</label>
+          <select id="rec-pay-member-sel" onchange="syncPaymentMemberPlan()" class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]"></select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Plan</label>
+            <select id="rec-pay-plan-sel" onchange="syncPaymentPlanAmount()" class="w-full px-3 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]"></select>
+          </div>
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Amount (₹) *</label>
+            <input type="number" id="rec-pay-amount-in" required class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl font-mono text-white focus:outline-none focus:border-[#E50914]">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Payment Method</label>
+            <select id="rec-pay-method-sel" class="w-full px-3 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]">
+              <option value="Cash">Cash (Counter)</option>
+              <option value="UPI">UPI (GPay / PhonePe / Paytm)</option>
+              <option value="Stripe / Card">Stripe / Card</option>
+              <option value="Net Banking">Net Banking</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Status</label>
+            <select id="rec-pay-status-sel" class="w-full px-3 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]">
+              <option value="Paid">Paid in Full</option>
+              <option value="Pending">Pending / Credit</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-end gap-3 pt-3 border-t border-zinc-800">
+          <button type="button" onclick="closeRecordPaymentModal()" class="px-4 py-2 bg-zinc-900 text-zinc-400 rounded-xl font-bold uppercase">Cancel</button>
+          <button type="submit" class="px-6 py-2 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-sm font-black uppercase tracking-wider rounded-xl shadow-md">Save &amp; Issue Receipt</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Manual Attendance Modal -->
+  <div id="manual-att-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+    <div class="relative w-full max-w-md bg-[#101014] border border-[#2B2B34] rounded-2xl p-6 text-white space-y-4">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+        <h3 class="font-display text-xl font-black uppercase text-white">Manual Attendance Punch</h3>
+        <button onclick="closeManualCheckInModal()" class="p-1.5 text-zinc-400 hover:text-white rounded-lg">✕</button>
+      </div>
+
+      <form onsubmit="handleManualPunchSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-bold uppercase tracking-wider text-zinc-300 mb-1">Select Athlete</label>
+          <select id="man-att-member-sel" class="w-full px-3.5 py-2.5 bg-[#050505] border border-zinc-800 rounded-xl text-white focus:outline-none focus:border-[#E50914]"></select>
+        </div>
+        <p class="text-zinc-400 text-[11px]">Marks check-in for today at the current local timestamp.</p>
+        <div class="flex justify-end gap-2 pt-2">
+          <button type="button" onclick="closeManualCheckInModal()" class="px-4 py-2 bg-zinc-900 text-zinc-400 rounded-lg font-bold uppercase">Cancel</button>
+          <button type="submit" class="px-5 py-2 bg-[#E50914] hover:bg-[#C70811] text-white font-display font-black uppercase tracking-wider rounded-lg shadow-md">Confirm Check-In</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       COMPLETE EMBEDDED JAVASCRIPT APPLICATION CORE
+       ========================================================================== -->
+  <script>
+    // Web Audio API Synthesizer
+    let audioCtx = null;
+    function playTone(success = true) {
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = success ? 'sine' : 'sawtooth';
+        osc.frequency.setValueAtTime(success ? 659.25 : 220, now);
+        if (success) osc.frequency.exponentialRampToValueAtTime(880, now + 0.15);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + (success ? 0.35 : 0.25));
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now);
+        osc.stop(now + (success ? 0.35 : 0.25));
+      } catch (e) {
+        console.debug('Audio prevented:', e);
+      }
+    }
+
+    // Default Seed Data - Exact Same Fee Structure Maintained
+    const SEED_PLANS = [
+      { id: 'monthly', name: 'Monthly Membership', durationMonths: 1, durationLabel: '1 Month', price: 1400, originalPrice: 1800, features: ['Full Gym & Free Weights Access', 'Cardio & Core Training Zone', 'Locker Room & Shower Access', 'Initial Fitness Assessment', 'Biometric Kiosk Quick Entry'] },
+      { id: 'quarterly', name: 'Quarterly Membership', durationMonths: 3, durationLabel: '3 Months', price: 3600, originalPrice: 4800, badge: 'Popular', features: ['All Monthly Plan Inclusions', 'Custom Hypertrophy Workout Split', 'Quarterly Body Composition Scan', 'The Muscle Factory Shaker', 'Trainer Form Check Weekly'] },
+      { id: 'half-yearly', name: 'Half-Yearly Membership', durationMonths: 6, durationLabel: '6 Months', price: 6500, originalPrice: 8400, badge: 'Best Value', features: ['All Quarterly Inclusions', 'Comprehensive Diet & Macros Blueprint', 'Personal Trainer 1-on-1 Onboarding', '2 Guest Passes per Month', 'Free Membership Freeze (15 Days)'] },
+      { id: 'yearly', name: 'Yearly Iron VIP', durationMonths: 12, durationLabel: '12 Months', price: 11900, originalPrice: 16000, badge: 'VIP Elite', features: ['Unlimited 365-Day Iron Access', 'Exclusive The Muscle Factory Bag & Hoodie', 'Monthly In-depth Body Analysis', 'Dedicated Locker Allocation', 'Full Nutrition Protocol'] }
+    ];
+
+    const SEED_SERVICES = [
+      { id: 'weight-training', title: 'Weight Training', subtitle: 'Free Weights & Mechanical Overload', desc: 'Master barbell movements, plate-loaded machines, and dumbbells up to 60KG for deep muscle recruitment.', outcomes: ['Neural adaptation & progression', 'Full-body muscle fiber overload'], span: true },
+      { id: 'bodybuilding', title: 'Bodybuilding', subtitle: 'Hypertrophy & Symmetry', desc: 'Aesthetic proportion splits, targeted volume isolation, drop sets, and peak contraction emphasis.', outcomes: ['Maximal hypertrophy', 'V-taper shoulder development'] },
+      { id: 'personal-training', title: 'Personal Training', subtitle: '1-on-1 Certified Mentorship', desc: 'Work directly with expert coaches with live form analysis and progressive poundage tracking.', outcomes: ['3x faster breakthrough', 'Zero injury form discipline'] },
+      { id: 'strength-training', title: 'Strength Training', subtitle: 'Powerlifting Output', desc: 'Maximal force production focusing on the core big three: Squat, Bench Press, and Deadlift.', outcomes: ['High-density bone strength', 'PR increases on core lifts'] },
+      { id: 'weight-loss', title: 'Weight Loss Programs', subtitle: 'Fat Shredding & Conditioning', desc: 'Torch stubborn fat while protecting lean muscle via targeted metabolic resistance training.', outcomes: ['8-12kg fat loss in 12 wks', 'Elevated resting metabolism'] },
+      { id: 'muscle-building', title: 'Muscle Building', subtitle: 'Mass Accumulation', desc: 'Engineered mass-gain blueprint to pack dense muscle mass on ectomorph and intermediate frames.', outcomes: ['Lean tissue accretion', 'Bicep & quad circumference'] },
+      { id: 'fitness-guidance', title: 'Fitness Guidance', subtitle: 'Nutrition & Macros', desc: 'Sustainable nutrition blueprints: protein targets, sleep optimization, and supplementation.', outcomes: ['Faster workout recovery', 'Clear sustainable meal splits'] }
+    ];
+
+    const SEED_MEMBERS = [
+      { id: 'MF-1001', name: 'Owais Dar', phone: '+91 91034 63612', planId: 'yearly', planName: 'Yearly Iron VIP', startDate: '2026-01-15', expiryDate: '2027-01-15', status: 'active', bloodGroup: 'O+', totalPaid: 11900 },
+      { id: 'MF-1002', name: 'Zubair Ahmad Mir', phone: '+91 97970 88219', planId: 'half-yearly', planName: 'Half-Yearly Membership', startDate: '2026-06-10', expiryDate: '2026-12-10', status: 'active', bloodGroup: 'B+', totalPaid: 6500 },
+      { id: 'MF-1003', name: 'Sahil Lone', phone: '+91 70061 99342', planId: 'quarterly', planName: 'Quarterly Membership', startDate: '2026-08-01', expiryDate: '2026-11-01', status: 'active', bloodGroup: 'A+', totalPaid: 3600 },
+      { id: 'MF-1004', name: 'Mehak Jan', phone: '+91 96225 18392', planId: 'half-yearly', planName: 'Half-Yearly Membership', startDate: '2026-07-05', expiryDate: '2027-01-05', status: 'active', bloodGroup: 'AB+', totalPaid: 6500 },
+      { id: 'MF-1005', name: 'Aaqib Bhat', phone: '+91 95964 22019', planId: 'monthly', planName: 'Monthly Membership', startDate: '2026-09-25', expiryDate: '2026-10-25', status: 'expired', bloodGroup: 'O-', totalPaid: 1400 },
+      { id: 'MF-1006', name: 'Faisal Rashid Shah', phone: '+91 90861 77312', planId: 'yearly', planName: 'Yearly Iron VIP', startDate: '2026-03-01', expiryDate: '2027-03-01', status: 'active', bloodGroup: 'B+', totalPaid: 11900 },
+      { id: 'MF-1007', name: 'Irfan Yatoo', phone: '+91 94194 33021', planId: 'quarterly', planName: 'Quarterly Membership', startDate: '2026-09-10', expiryDate: '2026-12-10', status: 'active', bloodGroup: 'A-', totalPaid: 3600 },
+      { id: 'MF-1008', name: 'Tariq Hussain Wani', phone: '+91 78891 66201', planId: 'monthly', planName: 'Monthly Membership', startDate: '2026-10-15', expiryDate: '2026-11-15', status: 'active', bloodGroup: 'O+', totalPaid: 1400 }
+    ];
+
+    const SEED_PAYMENTS = [
+      { id: 'INV-001', receiptNumber: 'RCP-MF-9021', memberId: 'MF-1001', memberName: 'Owais Dar', planName: 'Yearly Iron VIP', amount: 11900, date: '2026-01-15', method: 'Stripe / Card', status: 'Paid' },
+      { id: 'INV-002', receiptNumber: 'RCP-MF-9034', memberId: 'MF-1002', memberName: 'Zubair Ahmad Mir', planName: 'Half-Yearly Membership', amount: 6500, date: '2026-06-10', method: 'UPI', status: 'Paid' },
+      { id: 'INV-003', receiptNumber: 'RCP-MF-9055', memberId: 'MF-1003', memberName: 'Sahil Lone', planName: 'Quarterly Membership', amount: 3600, date: '2026-08-01', method: 'Stripe / Card', status: 'Paid' },
+      { id: 'INV-004', receiptNumber: 'RCP-MF-9072', memberId: 'MF-1004', memberName: 'Mehak Jan', planName: 'Half-Yearly Membership', amount: 6500, date: '2026-07-05', method: 'Cash', status: 'Paid' },
+      { id: 'INV-005', receiptNumber: 'RCP-MF-9089', memberId: 'MF-1006', memberName: 'Faisal Rashid Shah', planName: 'Yearly Iron VIP', amount: 11900, date: '2026-03-01', method: 'Stripe / Card', status: 'Paid' }
+    ];
+
+    const SEED_ATTENDANCE = [
+      { id: 'ATT-001', memberId: 'MF-1001', memberName: 'Owais Dar', date: '2026-10-31', checkInTime: '06:15 AM', checkOutTime: '07:45 AM', method: 'Biometric Scan', status: 'Completed' },
+      { id: 'ATT-002', memberId: 'MF-1006', memberName: 'Faisal Rashid Shah', date: '2026-10-31', checkInTime: '06:40 AM', checkOutTime: '08:10 AM', method: 'Biometric Scan', status: 'Completed' },
+      { id: 'ATT-003', memberId: 'MF-1002', memberName: 'Zubair Ahmad Mir', date: '2026-10-31', checkInTime: '05:30 PM', checkOutTime: '', method: 'Biometric Scan', status: 'Checked In' },
+      { id: 'ATT-004', memberId: 'MF-1004', memberName: 'Mehak Jan', date: '2026-10-31', checkInTime: '06:05 PM', checkOutTime: '', method: 'Member ID', status: 'Checked In' },
+      { id: 'ATT-005', memberId: 'MF-1007', memberName: 'Irfan Yatoo', date: '2026-10-31', checkInTime: '06:45 PM', checkOutTime: '', method: 'Biometric Scan', status: 'Checked In' }
+    ];
+
+    const SEED_LEADS = [
+      { id: 'L-101', name: 'Mudasir Nabi', phone: '+91 98580 12948', fitnessGoal: 'Muscle Building', preferredPlan: 'Half-Yearly Membership', message: 'Interested in evening powerlifting coaching.', createdAt: '2026-10-28', status: 'new' },
+      { id: 'L-102', name: 'Danish Gul', phone: '+91 70068 39201', fitnessGoal: 'Weight Loss', preferredPlan: 'Quarterly Membership', message: 'Timings for cardio and resistance split?', createdAt: '2026-10-29', status: 'contacted' }
+    ];
+
+    // LocalStorage Helpers
+    function fetchStore(k, d) {
+      try {
+        const item = localStorage.getItem('mf_red_' + k);
+        return item ? JSON.parse(item) : d;
+      } catch { return d; }
+    }
+    function saveStore(k, v) {
+      try { localStorage.setItem('mf_red_' + k, JSON.stringify(v)); } catch (e) {}
+    }
+
+    let plans = fetchStore('plans', SEED_PLANS);
+    let members = fetchStore('members', SEED_MEMBERS);
+    let payments = fetchStore('payments', SEED_PAYMENTS);
+    let attendance = fetchStore('attendance', SEED_ATTENDANCE);
+    let leads = fetchStore('leads', SEED_LEADS);
+
+    // Render Public Services
+    function renderServices() {
+      const container = document.getElementById('services-grid');
+      if (!container) return;
+      container.innerHTML = SEED_SERVICES.map((s, idx) => `
+        <div class="p-7 rounded-2xl bg-[#0E0E12] border border-[#222228] hover:border-[#E50914]/40 transition-all flex flex-col justify-between group ${s.span ? 'lg:col-span-2' : ''}">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center bg-[#E50914]/10 text-[#E50914] border border-[#E50914]/30 text-2xl">⚡</div>
+              <span class="text-xs font-mono uppercase text-zinc-500 font-bold">0${idx + 1}</span>
+            </div>
+            <div>
+              <h3 class="font-display text-2xl font-black uppercase text-white tracking-wide group-hover:text-[#E50914] transition-colors">${s.title}</h3>
+              <div class="text-xs text-red-400 font-medium mt-0.5">${s.subtitle}</div>
+            </div>
+            <p class="text-sm text-zinc-400 leading-relaxed">${s.desc}</p>
+            <div class="pt-2 space-y-1.5">
+              ${s.outcomes.map(o => `<div class="flex items-center gap-2 text-xs text-zinc-300"><span class="text-[#E50914]">✔</span><span>${o}</span></div>`).join('')}
+            </div>
+          </div>
+          <button onclick="openJoinModal()" class="w-full mt-6 py-2.5 bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 hover:text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-colors">
+            Enroll in Program ➔
+          </button>
+        </div>
+      `).join('');
+    }
+
+    // Render Public Plans
+    function renderPlans() {
+      const container = document.getElementById('plans-grid');
+      if (!container) return;
+      container.innerHTML = plans.map(p => `
+        <div class="relative rounded-2xl flex flex-col justify-between p-6 sm:p-7 transition-all ${p.badge ? 'bg-[#121217] border-2 border-[#E50914] shadow-[0_0_35px_rgba(229,9,20,0.25)] lg:-translate-y-2' : (p.id === 'yearly' ? 'bg-[#121217] border border-red-700/50 shadow-[0_0_25px_rgba(229,9,20,0.15)]' : 'bg-[#0E0E12] border border-[#222228]')}">
+          ${p.badge ? `<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full text-[11px] font-black uppercase tracking-widest text-white shadow-lg bg-gradient-to-r from-[#E50914] to-red-600 whitespace-nowrap">${p.badge}</div>` : ''}
+          <div class="space-y-4">
+            <div>
+              <h3 class="font-display text-2xl font-black uppercase text-white tracking-wide">${p.name}</h3>
+              <div class="text-xs text-red-400 font-semibold mt-1">Validity: ${p.durationLabel}</div>
+            </div>
+            <div class="pt-2 border-t border-zinc-800">
+              <div class="flex items-baseline gap-2">
+                <span class="font-display text-4xl sm:text-5xl font-black text-white font-mono">₹${p.price.toLocaleString('en-IN')}</span>
+                ${p.originalPrice > p.price ? `<span class="text-sm font-semibold text-zinc-500 line-through font-mono">₹${p.originalPrice.toLocaleString('en-IN')}</span>` : ''}
+              </div>
+            </div>
+            <ul class="space-y-2 pt-2 text-xs text-zinc-300">
+              ${p.features.map(f => `<li class="flex items-start gap-2"><span class="text-[#E50914] mt-0.5">✔</span><span>${f}</span></li>`).join('')}
+            </ul>
+          </div>
+          <button onclick="openJoinModal('${p.id}')" class="mt-6 w-full py-3.5 px-4 rounded-xl font-display text-lg font-black uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${p.badge ? 'bg-[#E50914] hover:bg-[#C70811] text-white shadow-md shadow-red-900/40' : 'bg-[#181820] hover:bg-[#23232C] text-white border border-[#282832]'}">
+            <span>Select Plan</span>
+            <span>➔</span>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    // Calculator Logic
+    let calcSex = 'male';
+    function setCalcGender(g) {
+      calcSex = g;
+      document.getElementById('calc-btn-m').className = g === 'male' ? 'py-2 text-xs font-bold uppercase rounded-lg transition-colors bg-[#E50914] text-white' : 'py-2 text-xs font-bold uppercase rounded-lg transition-colors text-zinc-400 hover:text-white';
+      document.getElementById('calc-btn-f').className = g === 'female' ? 'py-2 text-xs font-bold uppercase rounded-lg transition-colors bg-[#E50914] text-white' : 'py-2 text-xs font-bold uppercase rounded-lg transition-colors text-zinc-400 hover:text-white';
+      runCalculator();
+    }
+
+    function runCalculator() {
+      const age = Number(document.getElementById('calc-age').value);
+      const height = Number(document.getElementById('calc-height').value);
+      const weight = Number(document.getElementById('calc-weight').value);
+      const goal = document.getElementById('calc-goal').value;
+
+      document.getElementById('calc-age-label').innerText = age + ' Yrs';
+      document.getElementById('calc-height-label').innerText = height + ' cm';
+      document.getElementById('calc-weight-label').innerText = weight + ' KG';
+
+      const hM = height / 100;
+      const bmi = Number((weight / (hM * hM)).toFixed(1));
+      document.getElementById('calc-bmi-out').innerText = bmi;
+
+      const catEl = document.getElementById('calc-cat-out');
+      if (bmi < 18.5) { catEl.innerText = 'Underweight'; catEl.className = 'text-xs font-bold uppercase mt-1 text-red-300'; }
+      else if (bmi <= 24.9) { catEl.innerText = 'Normal Weight'; catEl.className = 'text-xs font-bold uppercase mt-1 text-emerald-400'; }
+      else if (bmi <= 29.9) { catEl.innerText = 'Overweight / Muscular'; catEl.className = 'text-xs font-bold uppercase mt-1 text-red-400'; }
+      else { catEl.innerText = 'Heavy Frame'; catEl.className = 'text-xs font-bold uppercase mt-1 text-[#E50914]'; }
+
+      const bmr = calcSex === 'male' ? (10 * weight + 6.25 * height - 5 * age + 5) : (10 * weight + 6.25 * height - 5 * age - 161);
+      const tdee = Math.round(bmr * 1.55);
+
+      let cal = tdee;
+      let prot = Math.round(weight * 2.2);
+
+      if (goal === 'hypertrophy') {
+        cal = tdee + 350; prot = Math.round(weight * 2.2);
+        document.getElementById('calc-protein-detail').innerText = '2.2g per KG (Hypertrophy)';
+      } else if (goal === 'fatloss') {
+        cal = Math.max(1400, tdee - 500); prot = Math.round(weight * 2.4);
+        document.getElementById('calc-protein-detail').innerText = '2.4g per KG (Preserve Lean Mass)';
+      } else {
+        cal = tdee + 200; prot = Math.round(weight * 2.0);
+        document.getElementById('calc-protein-detail').innerText = '2.0g per KG (Max Power)';
+      }
+
+      document.getElementById('calc-cal-out').innerText = cal.toLocaleString('en-IN');
+      document.getElementById('calc-protein-out').innerText = prot + 'g';
+    }
+
+    // Public WhatsApp Lead Submission
+    function handlePublicEnquiry(e) {
+      e.preventDefault();
+      const name = document.getElementById('public-enq-name').value.trim();
+      const phone = document.getElementById('public-enq-phone').value.trim();
+      const goal = document.getElementById('public-enq-goal').value;
+      const plan = document.getElementById('public-enq-plan').value;
+      const msg = document.getElementById('public-enq-msg').value.trim();
+
+      leads.unshift({
+        id: 'L-' + Date.now().toString().slice(-4),
+        name, phone, fitnessGoal: goal, preferredPlan: plan, message: msg || 'Interested in joining.',
+        createdAt: new Date().toISOString().split('T')[0], status: 'new'
+      });
+      saveStore('leads', leads);
+
+      const waText = encodeURIComponent(`Hello The Muscle Factory! 💪\nI want to enquire about gym admission.\n• Name: ${name}\n• Phone: ${phone}\n• Goal: ${goal}\n• Plan: ${plan}\n• Note: ${msg || 'None'}\n\nWhere Boys Become Men · Nowhar, Charari Sharief, J&K`);
+      playTone(true);
+      window.open(`https://wa.me/919103463612?text=${waText}`, '_blank');
+      alert('Your enquiry has been dispatched to WhatsApp (+91 91034 63612) and saved into The Muscle Factory records!');
+    }
+
+    // Join Modal Flow
+    function openJoinModal(planId = 'quarterly') {
+      const sel = document.getElementById('join-plan-select');
+      sel.innerHTML = plans.map(p => `<option value="${p.id}">${p.name} — ₹${p.price.toLocaleString('en-IN')} (${p.durationLabel})</option>`).join('');
+      sel.value = planId;
+      syncJoinPlanPrice();
+      document.getElementById('join-form').classList.remove('hidden');
+      document.getElementById('join-pass-result').classList.add('hidden');
+      document.getElementById('join-modal').classList.remove('hidden');
+    }
+    function closeJoinModal() {
+      document.getElementById('join-modal').classList.add('hidden');
+    }
+    function syncJoinPlanPrice() {
+      const pId = document.getElementById('join-plan-select').value;
+      const plan = plans.find(p => p.id === pId) || plans[0];
+      document.getElementById('join-pay-amount').innerText = '₹' + plan.price.toLocaleString('en-IN');
+    }
+
+    function handleJoinEnrollment(e) {
+      e.preventDefault();
+      const pId = document.getElementById('join-plan-select').value;
+      const plan = plans.find(p => p.id === pId) || plans[0];
+      const name = document.getElementById('join-name').value.trim();
+      const phone = document.getElementById('join-phone').value.trim();
+      const blood = document.getElementById('join-blood').value;
+      const method = document.getElementById('join-method').value;
+
+      const btn = document.getElementById('join-btn-submit');
+      btn.innerText = 'Verifying with Stripe...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.innerText = 'Pay & Activate Pass ➔';
+        btn.disabled = false;
+
+        const nextId = 'MF-' + (1000 + members.length + 1);
+        const today = new Date().toISOString().split('T')[0];
+        const exp = new Date();
+        exp.setMonth(exp.getMonth() + plan.durationMonths);
+        const expStr = exp.toISOString().split('T')[0];
+
+        members.unshift({
+          id: nextId, name, phone, planId: plan.id, planName: plan.name,
+          startDate: today, expiryDate: expStr, status: 'active', bloodGroup: blood, totalPaid: plan.price
+        });
+        saveStore('members', members);
+
+        payments.unshift({
+          id: 'INV-' + Date.now().toString().slice(-4),
+          receiptNumber: 'RCP-MF-' + Math.floor(9000 + Math.random() * 900),
+          memberId: nextId, memberName: name, planName: plan.name,
+          amount: plan.price, date: today, method, status: 'Paid'
+        });
+        saveStore('payments', payments);
+
+        document.getElementById('pass-res-name').innerText = name;
+        document.getElementById('pass-res-id').innerText = nextId;
+        document.getElementById('pass-res-plan').innerText = plan.name;
+        document.getElementById('pass-res-exp').innerText = expStr;
+
+        playTone(true);
+        document.getElementById('join-form').classList.add('hidden');
+        document.getElementById('join-pass-result').classList.remove('hidden');
+      }, 1000);
+    }
+
+    // Admin Auth & Portal Controls
+    function openAdminLoginModal() {
+      document.getElementById('admin-login-modal').classList.remove('hidden');
+    }
+    function closeAdminLoginModal() {
+      document.getElementById('admin-login-modal').classList.add('hidden');
+    }
+    function handleAdminAuth(e) {
+      e.preventDefault();
+      const pin = document.getElementById('admin-auth-pin').value.trim();
+      if (pin === '1234' || pin.toLowerCase() === 'admin' || pin.toLowerCase() === 'themusclefactory') {
+        quickAuthAdmin();
+      } else {
+        alert('Invalid PIN. Use default: 1234');
+      }
+    }
+    function quickAuthAdmin() {
+      closeAdminLoginModal();
+      document.getElementById('public-view').classList.add('hidden');
+      document.getElementById('admin-view').classList.remove('hidden');
+      window.scrollTo(0, 0);
+      refreshAdminData();
+    }
+    function exitAdminPortal() {
+      document.getElementById('admin-view').classList.add('hidden');
+      document.getElementById('public-view').classList.remove('hidden');
+      window.scrollTo(0, 0);
+    }
+
+    function setAdminTab(tabName, el) {
+      document.querySelectorAll('.admin-tab-btn').forEach(b => {
+        b.className = 'admin-tab-btn px-3 py-2 rounded-lg text-zinc-400 hover:text-white';
+      });
+      if (el) el.className = 'admin-tab-btn active px-3 py-2 rounded-lg bg-[#E50914] text-white font-bold';
+
+      document.querySelectorAll('.admin-sec').forEach(s => s.classList.add('hidden'));
+      const sec = document.getElementById('admin-sec-' + tabName);
+      if (sec) sec.classList.remove('hidden');
+      refreshAdminData();
+    }
+
+    function refreshAdminData() {
+      // Tab Counters
+      document.getElementById('tab-cnt-members').innerText = members.length;
+      document.getElementById('tab-cnt-att').innerText = attendance.length;
+      document.getElementById('tab-cnt-leads').innerText = leads.length;
+
+      // KPIs
+      document.getElementById('kpi-total').innerText = members.length;
+      document.getElementById('kpi-active').innerText = members.filter(m => m.status === 'active').length;
+      document.getElementById('kpi-expired').innerText = members.filter(m => m.status === 'expired').length;
+      document.getElementById('kpi-today').innerText = attendance.length;
+      const rev = payments.filter(p => p.status === 'Paid').reduce((a, b) => a + b.amount, 0);
+      document.getElementById('kpi-rev').innerText = '₹' + rev.toLocaleString('en-IN');
+
+      // Overview Table
+      const ovRows = document.getElementById('overview-recent-rows');
+      if (ovRows) {
+        ovRows.innerHTML = members.slice(0, 5).map(m => `
+          <tr class="hover:bg-zinc-800/30">
+            <td class="py-3 px-3 font-bold text-white uppercase">${m.name}<br><span class="text-[10px] text-zinc-400 font-mono">${m.phone}</span></td>
+            <td class="py-3 px-3 font-mono text-[#E50914] font-bold">${m.id}</td>
+            <td class="py-3 px-3 text-zinc-300">${m.planName}</td>
+            <td class="py-3 px-3 font-mono text-zinc-400">${m.startDate}</td>
+            <td class="py-3 px-3 font-mono text-red-400 font-bold">${m.expiryDate}</td>
+            <td class="py-3 px-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${m.status === 'active' ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'}">${m.status}</span></td>
+            <td class="py-3 px-3 font-mono font-bold text-white">₹${(m.totalPaid || 0).toLocaleString('en-IN')}</td>
+          </tr>
+        `).join('');
+      }
+
+      renderMembersTable();
+      renderPaymentsTable();
+      renderAttendanceTable();
+      renderAdminPlansEditor();
+      renderLeadsTable();
+    }
+
+    let memFilter = 'all';
+    function setMemberFilter(f) {
+      memFilter = f;
+      renderMembersTable();
+    }
+
+    function renderMembersTable() {
+      const q = (document.getElementById('member-search-input')?.value || '').toLowerCase();
+      const tbody = document.getElementById('members-table-rows');
+      if (!tbody) return;
+
+      const filtered = members.filter(m => {
+        const matchesQ = m.name.toLowerCase().includes(q) || m.phone.includes(q) || m.id.toLowerCase().includes(q);
+        const matchesF = memFilter === 'all' ? true : m.status === memFilter;
+        return matchesQ && matchesF;
+      });
+
+      tbody.innerHTML = filtered.map(m => `
+        <tr class="hover:bg-zinc-800/40">
+          <td class="py-3 px-4 font-bold text-white uppercase">${m.name}</td>
+          <td class="py-3 px-4 font-mono font-bold text-[#E50914]">${m.id}</td>
+          <td class="py-3 px-4 font-mono text-zinc-300">${m.phone}</td>
+          <td class="py-3 px-4 text-zinc-300">${m.planName}</td>
+          <td class="py-3 px-4 font-mono font-bold text-red-400">${m.expiryDate}</td>
+          <td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${m.status === 'active' ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'}">${m.status}</span></td>
+          <td class="py-3 px-4 font-mono font-bold text-white">₹${(m.totalPaid || 0).toLocaleString('en-IN')}</td>
+          <td class="py-3 px-4 text-right">
+            ${m.status === 'expired' ? `<button onclick="renewMemberAction('${m.id}')" class="px-2 py-1 bg-red-600/20 text-red-300 rounded text-[10px] font-bold uppercase mr-1">Renew</button>` : ''}
+            <button onclick="deleteMemberAction('${m.id}')" class="px-2 py-1 bg-rose-500/20 text-rose-300 rounded text-[10px] font-bold uppercase">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function renewMemberAction(mId) {
+      const m = members.find(x => x.id === mId);
+      if (!m) return;
+      const today = new Date().toISOString().split('T')[0];
+      const exp = new Date();
+      exp.setMonth(exp.getMonth() + 3);
+      m.startDate = today;
+      m.expiryDate = exp.toISOString().split('T')[0];
+      m.status = 'active';
+      m.totalPaid = (m.totalPaid || 0) + 3600;
+      saveStore('members', members);
+
+      payments.unshift({
+        id: 'INV-' + Date.now().toString().slice(-4),
+        receiptNumber: 'RCP-MF-' + Math.floor(9000 + Math.random() * 900),
+        memberId: m.id, memberName: m.name, planName: m.planName,
+        amount: 3600, date: today, method: 'Cash', status: 'Paid'
+      });
+      saveStore('payments', payments);
+
+      playTone(true);
+      refreshAdminData();
+    }
+
+    function deleteMemberAction(mId) {
+      if (confirm('Delete member ' + mId + '?')) {
+        members = members.filter(m => m.id !== mId);
+        saveStore('members', members);
+        refreshAdminData();
+      }
+    }
+
+    function renderPaymentsTable() {
+      const q = (document.getElementById('pay-search-input')?.value || '').toLowerCase();
+      const tbody = document.getElementById('payments-table-rows');
+      if (!tbody) return;
+
+      const filtered = payments.filter(p => p.memberName.toLowerCase().includes(q) || p.receiptNumber.toLowerCase().includes(q));
+      tbody.innerHTML = filtered.map(p => `
+        <tr class="hover:bg-zinc-800/40">
+          <td class="py-3 px-4 font-mono font-bold text-red-400">${p.receiptNumber}</td>
+          <td class="py-3 px-4 font-bold text-white uppercase">${p.memberName}</td>
+          <td class="py-3 px-4 text-zinc-300">${p.planName}</td>
+          <td class="py-3 px-4 font-mono font-bold text-base text-white">₹${p.amount.toLocaleString('en-IN')}</td>
+          <td class="py-3 px-4 font-mono text-zinc-400">${p.date}</td>
+          <td class="py-3 px-4 text-zinc-300">${p.method}</td>
+          <td class="py-3 px-4"><span class="text-emerald-400 font-bold uppercase">${p.status}</span></td>
+          <td class="py-3 px-4 text-right">
+            <button onclick="printPaymentInvoice('${p.receiptNumber}', '${p.memberName}', ${p.amount})" class="px-2.5 py-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-200 rounded text-xs font-semibold">🖨️ Print</button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function printPaymentInvoice(rcp, name, amt) {
+      alert(`The Muscle Factory Invoice:\nReceipt: ${rcp}\nMember: ${name}\nAmount: ₹${amt.toLocaleString('en-IN')}\nStatus: Paid in Full`);
+      window.print();
+    }
+
+    function renderAttendanceTable() {
+      const tbody = document.getElementById('attendance-table-rows');
+      if (!tbody) return;
+      tbody.innerHTML = attendance.map(a => `
+        <tr class="hover:bg-zinc-800/40">
+          <td class="py-3 px-4 font-bold text-white uppercase">${a.memberName}</td>
+          <td class="py-3 px-4 font-mono font-bold text-[#E50914]">${a.memberId}</td>
+          <td class="py-3 px-4 font-mono text-zinc-400">${a.date}</td>
+          <td class="py-3 px-4 font-mono font-bold text-red-400">${a.checkInTime}</td>
+          <td class="py-3 px-4 font-mono text-zinc-400">${a.checkOutTime || '—'}</td>
+          <td class="py-3 px-4 text-zinc-300">${a.method}</td>
+          <td class="py-3 px-4"><span class="${a.status === 'Checked In' ? 'text-emerald-400 font-bold' : 'text-zinc-500'}">${a.status}</span></td>
+          <td class="py-3 px-4 text-right">
+            ${a.status === 'Checked In' ? `<button onclick="punchOutAction('${a.id}')" class="px-2 py-1 bg-zinc-800 hover:bg-zinc-700 text-red-400 rounded text-[11px] font-semibold">Punch Out</button>` : 'Done'}
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function punchOutAction(id) {
+      const a = attendance.find(x => x.id === id);
+      if (!a) return;
+      a.checkOutTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      a.status = 'Completed';
+      saveStore('attendance', attendance);
+      playTone(true);
+      renderAttendanceTable();
+    }
+
+    // Biometric Kiosk Logic
+    function openKioskModal() {
+      document.getElementById('kiosk-modal').classList.remove('hidden');
+      document.getElementById('kiosk-result-card').classList.add('hidden');
+      document.getElementById('kiosk-laser').classList.add('hidden');
+    }
+    function closeKioskModal() {
+      document.getElementById('kiosk-modal').classList.add('hidden');
+    }
+    function quickFillKiosk(id) {
+      document.getElementById('kiosk-id-query').value = id;
+      performKioskScan();
+    }
+
+    function performKioskScan() {
+      const laser = document.getElementById('kiosk-laser');
+      laser.classList.remove('hidden');
+      const query = (document.getElementById('kiosk-id-query').value || 'MF-1001').trim();
+
+      setTimeout(() => {
+        laser.classList.add('hidden');
+        const member = members.find(m => m.id.toLowerCase() === query.toLowerCase() || m.name.toLowerCase().includes(query.toLowerCase()));
+        const card = document.getElementById('kiosk-result-card');
+        card.classList.remove('hidden');
+
+        if (!member) {
+          playTone(false);
+          card.className = 'p-4 rounded-xl border border-rose-500/40 bg-rose-500/10 text-rose-200 text-left text-xs';
+          card.innerHTML = `<strong>ACCESS DENIED:</strong> Member "${query}" not recognized in The Muscle Factory records.`;
+          return;
+        }
+
+        if (member.status === 'expired') {
+          playTone(false);
+          card.className = 'p-4 rounded-xl border border-rose-500/40 bg-rose-500/10 text-rose-200 text-left text-xs';
+          card.innerHTML = `<strong>MEMBERSHIP EXPIRED:</strong> ${member.name} (${member.id}) expired on ${member.expiryDate}. Please renew.`;
+          return;
+        }
+
+        const already = attendance.find(a => a.memberId === member.id && a.status === 'Checked In');
+        if (already) {
+          playTone(false);
+          card.className = 'p-4 rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-200 text-left text-xs';
+          card.innerHTML = `<strong>ALREADY PUNCHED IN:</strong> ${member.name} is currently inside the iron floor since ${already.checkInTime}.`;
+          return;
+        }
+
+        const timeNow = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        attendance.unshift({
+          id: 'ATT-' + Date.now().toString().slice(-4),
+          memberId: member.id,
+          memberName: member.name,
+          date: new Date().toISOString().split('T')[0],
+          checkInTime: timeNow,
+          checkOutTime: '',
+          method: 'Biometric Scan',
+          status: 'Checked In'
+        });
+        saveStore('attendance', attendance);
+        playTone(true);
+
+        card.className = 'p-4 rounded-xl border border-emerald-500/40 bg-emerald-500/10 text-emerald-200 text-left text-xs';
+        card.innerHTML = `
+          <div class="flex items-center justify-between font-bold text-white">
+            <span>ACCESS GRANTED: ${member.name}</span>
+            <span class="font-mono text-emerald-400">${timeNow}</span>
+          </div>
+          <div class="text-[11px] text-zinc-300 mt-1">Tier: ${member.planName} · Member ID: ${member.id} · Valid Until: ${member.expiryDate}</div>
+        `;
+        refreshAdminData();
+      }, 700);
+    }
+
+    // Add Member Modal
+    function openAddMemberModal() {
+      const sel = document.getElementById('add-mem-plan');
+      sel.innerHTML = plans.map(p => `<option value="${p.id}">${p.name} (₹${p.price})</option>`).join('');
+      document.getElementById('add-member-modal').classList.remove('hidden');
+    }
+    function closeAddMemberModal() {
+      document.getElementById('add-member-modal').classList.add('hidden');
+    }
+    function handleAdminCreateMember(e) {
+      e.preventDefault();
+      const name = document.getElementById('add-mem-name').value.trim();
+      const phone = document.getElementById('add-mem-phone').value.trim();
+      const planId = document.getElementById('add-mem-plan').value;
+      const blood = document.getElementById('add-mem-blood').value;
+      const plan = plans.find(p => p.id === planId) || plans[0];
+
+      const nextId = 'MF-' + (1000 + members.length + 1);
+      const today = new Date().toISOString().split('T')[0];
+      const exp = new Date();
+      exp.setMonth(exp.getMonth() + plan.durationMonths);
+
+      members.unshift({
+        id: nextId, name, phone, planId: plan.id, planName: plan.name,
+        startDate: today, expiryDate: exp.toISOString().split('T')[0],
+        status: 'active', bloodGroup: blood, totalPaid: plan.price
+      });
+      saveStore('members', members);
+
+      payments.unshift({
+        id: 'INV-' + Date.now().toString().slice(-4),
+        receiptNumber: 'RCP-MF-' + Math.floor(9000 + Math.random() * 900),
+        memberId: nextId, memberName: name, planName: plan.name,
+        amount: plan.price, date: today, method: 'Cash', status: 'Paid'
+      });
+      saveStore('payments', payments);
+
+      playTone(true);
+      closeAddMemberModal();
+      refreshAdminData();
+      alert(`Athlete ${name} enrolled with ID: ${nextId}`);
+    }
+
+    // Record Payment Modal
+    function openRecordPaymentModal() {
+      const mSel = document.getElementById('rec-pay-member-sel');
+      mSel.innerHTML = members.map(m => `<option value="${m.id}">${m.name} (${m.id})</option>`).join('');
+      const pSel = document.getElementById('rec-pay-plan-sel');
+      pSel.innerHTML = plans.map(p => `<option value="${p.id}">${p.name} (₹${p.price})</option>`).join('');
+      syncPaymentPlanAmount();
+      document.getElementById('record-payment-modal').classList.remove('hidden');
+    }
+    function closeRecordPaymentModal() {
+      document.getElementById('record-payment-modal').classList.add('hidden');
+    }
+    function syncPaymentMemberPlan() {
+      const mId = document.getElementById('rec-pay-member-sel').value;
+      const m = members.find(x => x.id === mId);
+      if (m && m.planId) {
+        document.getElementById('rec-pay-plan-sel').value = m.planId;
+        syncPaymentPlanAmount();
+      }
+    }
+    function syncPaymentPlanAmount() {
+      const pId = document.getElementById('rec-pay-plan-sel').value;
+      const plan = plans.find(p => p.id === pId) || plans[0];
+      document.getElementById('rec-pay-amount-in').value = plan.price;
+    }
+    function handleAdminRecordPayment(e) {
+      e.preventDefault();
+      const mId = document.getElementById('rec-pay-member-sel').value;
+      const pId = document.getElementById('rec-pay-plan-sel').value;
+      const amt = Number(document.getElementById('rec-pay-amount-in').value);
+      const method = document.getElementById('rec-pay-method-sel').value;
+      const status = document.getElementById('rec-pay-status-sel').value;
+      const member = members.find(m => m.id === mId);
+      const plan = plans.find(p => p.id === pId) || plans[0];
+      if (!member) return;
+
+      const rcp = 'RCP-MF-' + Math.floor(9000 + Math.random() * 900);
+      const today = new Date().toISOString().split('T')[0];
+      payments.unshift({
+        id: 'INV-' + Date.now().toString().slice(-4),
+        receiptNumber: rcp, memberId: member.id, memberName: member.name,
+        planName: plan.name, amount: amt, date: today, method, status
+      });
+      saveStore('payments', payments);
+
+      if (status === 'Paid') {
+        member.totalPaid = (member.totalPaid || 0) + amt;
+        member.status = 'active';
+        const exp = new Date();
+        exp.setMonth(exp.getMonth() + plan.durationMonths);
+        member.expiryDate = exp.toISOString().split('T')[0];
+        saveStore('members', members);
+      }
+
+      playTone(true);
+      closeRecordPaymentModal();
+      refreshAdminData();
+      alert(`Payment recorded: ${rcp} for ${member.name} (₹${amt})`);
+    }
+
+    // Plans Editor in Admin
+    function renderAdminPlansEditor() {
+      const container = document.getElementById('admin-plans-editor-grid');
+      if (!container) return;
+      container.innerHTML = plans.map(p => `
+        <div class="p-5 rounded-2xl bg-[#0E0E12] border border-[#222228] space-y-4">
+          <div class="flex items-center justify-between">
+            <h4 class="font-display text-lg font-black uppercase text-white">${p.name}</h4>
+            <span class="text-xs text-red-400 font-mono">${p.durationLabel}</span>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1">Fee (₹)</label>
+            <input type="number" id="edit-plan-price-${p.id}" value="${p.price}" class="w-full px-3 py-2 bg-[#050505] border border-zinc-800 rounded-lg text-white font-mono text-sm focus:outline-none focus:border-[#E50914]">
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-wider text-zinc-400 mb-1">Badge Tag</label>
+            <input type="text" id="edit-plan-badge-${p.id}" value="${p.badge || ''}" placeholder="e.g. Popular, Best Value" class="w-full px-3 py-2 bg-[#050505] border border-zinc-800 rounded-lg text-white text-xs focus:outline-none focus:border-[#E50914]">
+          </div>
+          <button onclick="saveAdminPlanChanges('${p.id}')" class="w-full py-2 bg-[#E50914] hover:bg-[#C70811] text-white rounded-lg text-xs font-bold uppercase transition-colors shadow-sm">
+            Save Plan
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function saveAdminPlanChanges(pId) {
+      const plan = plans.find(p => p.id === pId);
+      if (!plan) return;
+      const newPrice = Number(document.getElementById('edit-plan-price-' + pId).value);
+      const newBadge = document.getElementById('edit-plan-badge-' + pId).value.trim();
+      plan.price = newPrice;
+      plan.badge = newBadge || undefined;
+      saveStore('plans', plans);
+      renderPlans();
+      playTone(true);
+      alert(`Updated ${plan.name} price to ₹${newPrice.toLocaleString('en-IN')}`);
+    }
+
+    function resetDefaultPlans() {
+      if (confirm('Reset membership plans to original prices?')) {
+        plans = JSON.parse(JSON.stringify(SEED_PLANS));
+        saveStore('plans', plans);
+        renderPlans();
+        renderAdminPlansEditor();
+        playTone(true);
+      }
+    }
+
+    // Leads & Inquiries Table
+    function renderLeadsTable() {
+      const tbody = document.getElementById('leads-table-rows');
+      if (!tbody) return;
+      tbody.innerHTML = leads.map(l => `
+        <tr class="hover:bg-zinc-800/40">
+          <td class="py-3 px-4 font-bold text-white uppercase">${l.name}</td>
+          <td class="py-3 px-4 font-mono text-red-400">${l.phone}</td>
+          <td class="py-3 px-4 text-zinc-300">${l.fitnessGoal}</td>
+          <td class="py-3 px-4 text-zinc-300">${l.preferredPlan}</td>
+          <td class="py-3 px-4 font-mono text-zinc-400">${l.createdAt}</td>
+          <td class="py-3 px-4 text-zinc-300 max-w-xs truncate" title="${l.message}">${l.message}</td>
+          <td class="py-3 px-4"><span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase ${l.status === 'new' ? 'bg-amber-500/15 text-amber-400 border border-amber-500/30' : 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'}">${l.status}</span></td>
+          <td class="py-3 px-4 text-right">
+            <a href="https://wa.me/${l.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(l.name)}!%20Replying%20from%20The%20Muscle%20Factory%20regarding%20your%20membership%20enquiry." target="_blank" class="px-2.5 py-1 bg-[#25D366] text-black font-bold text-xs rounded hover:bg-[#20ba59]">WhatsApp</a>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    function openManualCheckInModal() {
+      const sel = document.getElementById('man-att-member-sel');
+      sel.innerHTML = members.map(m => `<option value="${m.id}">${m.name} (${m.id})</option>`).join('');
+      document.getElementById('manual-att-modal').classList.remove('hidden');
+    }
+    function closeManualCheckInModal() {
+      document.getElementById('manual-att-modal').classList.add('hidden');
+    }
+    function handleManualPunchSubmit(e) {
+      e.preventDefault();
+      const mId = document.getElementById('man-att-member-sel').value;
+      const member = members.find(m => m.id === mId);
+      if (!member) return;
+
+      attendance.unshift({
+        id: 'ATT-' + Date.now().toString().slice(-4),
+        memberId: member.id, memberName: member.name,
+        date: new Date().toISOString().split('T')[0],
+        checkInTime: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        checkOutTime: '', method: 'Manual Desk', status: 'Checked In'
+      });
+      saveStore('attendance', attendance);
+      playTone(true);
+      closeManualCheckInModal();
+      refreshAdminData();
+    }
+
+    function toggleMobileNav() {
+      const menu = document.getElementById('mobile-nav-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Initialize Page
+    window.addEventListener('DOMContentLoaded', () => {
+      renderServices();
+      renderPlans();
+      runCalculator();
+      const yr = document.getElementById('site-yr');
+      if (yr) yr.innerText = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
