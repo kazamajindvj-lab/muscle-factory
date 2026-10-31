@@ -1105,9 +1105,8 @@
         <div>
           <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-1.5 flex justify-between">
             <span>Security PIN</span>
-            <span class="text-red-400 font-mono text-[11px]">Default: Usman112</span>
           </label>
-          <input type="password" id="admin-auth-pin" placeholder="Enter PIN (Usman112)" class="w-full px-4 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-center text-lg font-mono text-white tracking-widest focus:outline-none focus:border-[#E50914]">
+          <input type="password" id="admin-auth-pin" placeholder="Enter Admin PIN" class="w-full px-4 py-3 bg-[#050505] border border-zinc-800 rounded-xl text-center text-lg font-mono text-white tracking-widest focus:outline-none focus:border-[#E50914]">
         </div>
         <button type="submit" class="w-full py-3.5 bg-[#E50914] hover:bg-[#C70811] text-white font-display text-base font-black uppercase tracking-wider rounded-xl transition-all shadow-md shadow-red-900/40">
           Unlock Admin Dashboard ➔
@@ -1115,9 +1114,6 @@
       </form>
 
       <div class="pt-2 border-t border-zinc-800 space-y-2">
-        <button onclick="quickAuthAdmin()" class="w-full py-2.5 bg-[#181820] hover:bg-zinc-800 text-red-400 border border-zinc-700 rounded-xl text-xs font-bold uppercase tracking-wider">
-          ⚡ Quick 1-Click Demo Login
-        </button>
         <button onclick="closeAdminLoginModal()" class="w-full py-2 text-xs text-zinc-400 hover:text-white">
           Back to Public Website
         </button>
@@ -1584,15 +1580,22 @@
     function closeAdminLoginModal() {
       document.getElementById('admin-login-modal').classList.add('hidden');
     }
+
+    // Secure Admin Authentication
     function handleAdminAuth(e) {
       e.preventDefault();
       const pin = document.getElementById('admin-auth-pin').value.trim();
-      if (pin === '1234' || pin.toLowerCase() === 'admin' || pin.toLowerCase() === 'themusclefactory') {
+      
+      // CHANGE THIS TO YOUR PRIVATE SECRET PIN:
+      const mySecretPin = '7890';
+
+      if (pin === mySecretPin) {
         quickAuthAdmin();
       } else {
-        alert('Invalid PIN. Use default: 1234');
+        alert('Access Denied: Invalid Security PIN');
       }
     }
+
     function quickAuthAdmin() {
       closeAdminLoginModal();
       document.getElementById('public-view').classList.add('hidden');
